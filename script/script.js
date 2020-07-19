@@ -80,8 +80,7 @@ class AppData {
     start() {
 
         this.budget = salaryAmount.value;
-        this.getExpenses();
-        this.getIncome();
+        this.getExpensesIncome();
         this.getExpensesMonth();
         this.getAddExpenses();
         this.getAddIncome();
@@ -171,7 +170,7 @@ class AppData {
     }
 
     checkField(event) {
-        let target = event.target;
+        const target = event.target;
         if (target.getAttribute('placeholder') === 'Сумма') {
             target.value = target.value.replace(/[^0-9]/g, '');
         }
@@ -212,23 +211,44 @@ class AppData {
             expensesPlus.style.display = 'none';
         }
     }
+//доделать
+    addExpensesIncomeBlock(items) {
+        const cloneExpensesItem = expensesItems[0].cloneNode(true);
+        expensesItems[0].parentNode.insertBefore(cloneExpensesItem,
+            expensesPlus);
 
-    getExpenses() {
+        expensesItems = document.querySelectorAll('.expenses-items');
+
+        const cloneExpensesItemInput = cloneExpensesItem.querySelectorAll('input');
+        cloneExpensesItemInput.forEach(item => {
+            item.value = '';
+        });
+
+        if (expensesItems.length === 3) {
+            expensesPlus.style.display = 'none';
+        }
+    }
+
+    getExpensesIncome() {
         const _this = this;
 
-        expensesItems.forEach(item => {
-            const itemExpenses = item.querySelector('.expenses-title').value;
-            const cashExpenses = item.querySelector('.expenses-amount').value;
+        const count = item => {
+            const startStr = item.className.split('-')[0];
+            console.log(startStr);
+            const itemTitle = item.querySelector(`.${startStr}-title`).value;
+            const cashAmount = item.querySelector(`.${startStr}-amount`).value;
 
-            /*   if (!isString(itemExpenses) || (!isNumber(cashExpenses))) {
-                   alert('Введите корректные данные в Обязательные расходы');
-                   return;
-               }*/
-
-            if (itemExpenses !== '' && cashExpenses !== '') {
-                _this.expenses[itemExpenses] = cashExpenses;
+            if (itemTitle !== '' && cashAmount !== '') {
+                _this[startStr][itemTitle] = cashAmount;
             }
-        });
+        };
+
+        incomeItems.forEach(count);
+        expensesItems.forEach(count);
+
+        for (const key in _this.income) {
+            this.incomeMonths += +this.income[key];
+        }
     }
 
     addIncomeBlock() {
@@ -246,28 +266,6 @@ class AppData {
 
         if (incomeItems.length === 3) {
             incomePlus.style.display = 'none';
-        }
-    }
-
-    getIncome() {
-        const _this = this;
-        incomeItems.forEach(item => {
-            const itemIncome = item.querySelector('.income-title').value;
-            const cashIncome = item.querySelector('.income-amount').value;
-
-
-            /*   if (!isString(itemIncome) || (!isNumber(cashIncome))) {
-                   alert('Введите корректные данные в Дополнительный доход');
-                   return;
-               }*/
-
-            if (itemIncome !== '' && cashIncome !== '') {
-                _this.addIncome[itemIncome] = cashIncome;
-            }
-        });
-
-        for (const key in _this.addIncome) {
-            this.incomeMonths += +this.addIncome[key];
         }
     }
 
