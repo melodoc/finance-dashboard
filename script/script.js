@@ -12,7 +12,7 @@ const isString = function (string) {
     }
 };
 
-const startBtn = document.getElementById('start'),
+const startBtn = document.querySelector('#start'),
     plusBtn = document.querySelectorAll('.btn_plus'),
     incomePlus = plusBtn[0],
     expensesPlus = plusBtn[1],
@@ -54,7 +54,9 @@ const itemExpenses = document.querySelector('.expenses-title').value,
     depositAmount = document.querySelector('.deposit-amount'),
     depositPercent = document.querySelector('.deposit-percent');
 
-const accountData = document.querySelector('.data');
+const incomeData = document.querySelector('.income-data');
+const expensesData = document.querySelector('.expenses-data');
+
 
 window.onload = function () {
     startBtn.disabled = true;
@@ -170,6 +172,7 @@ class AppData {
     }
 
     checkField(event) {
+        console.info(event);
         const target = event.target;
         if (target.getAttribute('placeholder') === 'Сумма') {
             target.value = target.value.replace(/[^0-9]/g, '');
@@ -393,7 +396,8 @@ class AppData {
         incomePlus.addEventListener('click', appData.addIncomeBlock);
         periodSelect.addEventListener('input', appData.rangeHandler);
         depositCheck.addEventListener('change', appData.depositHandler.bind(appData));
-        accountData.addEventListener('change', appData.checkField);
+        incomeData.addEventListener('change', appData.checkField);
+        expensesData.addEventListener('change', appData.checkField);
     }
 }
 

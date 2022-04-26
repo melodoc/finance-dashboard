@@ -52,11 +52,13 @@
     color: #adb1ba;
 }
 
-.data>div {
+.income-data>div,
+.expenses-data>div {
     padding-right: 30px;
 }
 
-.data input[type=text] {
+.income-data input[type=text],
+.expenses-data input[type=text] {
     width: 263px;
     height: 20px;
     padding: 18px 16px;
@@ -68,35 +70,40 @@
     border-radius: 4px 4px 0 0;
 }
 
-.data input[type=text]::-webkit-input-placeholder {
+.income-data input[type=text]::-webkit-input-placeholder,
+.expenses-data input[type=text]::-webkit-input-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     color: rgba(11, 31, 53, .6);
 }
 
-.data input[type=text]:-moz-placeholder {
+.income-data input[type=text]:-moz-placeholder,
+.expenses-data input[type=text]:-moz-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     color: rgba(11, 31, 53, .6);
 }
 
-.data input[type=text]::-moz-placeholder {
+.income-data input[type=text]::-moz-placeholder,
+.expenses-data input[type=text]::-moz-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     color: rgba(11, 31, 53, .6);
 }
 
-.data input[type=text]:-ms-input-placeholder {
+.income-data input[type=text]:-ms-input-placeholder,
+.expenses-data input[type=text]:-ms-input-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     color: rgba(11, 31, 53, .6);
 }
 
-.data .btn_plus {
+.income-data .btn_plus,
+.expenses-data .btn_plus {
     width: 30px;
     height: 30px;
     margin-top: 15px;
@@ -113,17 +120,21 @@
     cursor: pointer;
 }
 
-.data .btn_plus:hover {
+.income-data .btn_plus:hover,
+.expenses-data .btn_plus:hover {
     -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2)
 }
 
-.data .additional_expenses-item,
-.data .salary-amount {
+.income-data .additional_expenses-item,
+.income-data .salary-amount,
+.expenses-data .additional_expenses-item,
+.expenses-data .salary-amount {
     width: calc(100% - 30px) !important
 }
 
-.data .deposit-label {
+.income-data .deposit-label,
+.expenses-data .deposit-label {
     position: relative;
 
     display: block;
@@ -139,7 +150,8 @@
     user-select: none
 }
 
-.data .deposit-label input {
+.income-data .deposit-label input,
+.expenses-data .deposit-label input {
     position: absolute;
 
     opacity: 0;
@@ -148,7 +160,8 @@
     width: 0
 }
 
-.data .deposit-label .deposit-checkmark {
+.income-data .deposit-label .deposit-checkmark,
+.expenses-data .deposit-label .deposit-checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -158,7 +171,8 @@
     background-color: rgba(239, 49, 36, .85);
 }
 
-.data .deposit-label .deposit-checkmark:after {
+.income-data .deposit-label .deposit-checkmark:after,
+.expenses-data .deposit-label .deposit-checkmark:after {
     position: absolute;
     top: 5px;
     left: 9px;
@@ -174,17 +188,20 @@
     transform: rotate(45deg)
 }
 
-.data .deposit-label:hover input~.deposit-checkmark {
+.income-data .deposit-label:hover input~.deposit-checkmark,
+.expenses-data .deposit-label:hover input~.deposit-checkmark {
     background-color: rgba(239, 49, 36, .85);
     -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2)
 }
 
-.data .deposit-label input:checked~.deposit-checkmark:after {
+.income-data .deposit-label input:checked~.deposit-checkmark:after,
+.expenses-data .deposit-label input:checked~.deposit-checkmark:after {
     display: block
 }
 
-.data .deposit-bank {
+.income-data .deposit-bank,
+.expenses-data .deposit-bank {
     display: none;
     width: 263px;
     max-width: 100%;
@@ -217,65 +234,79 @@
     background-size: 20px auto, 100%
 }
 
-.data .deposit-bank::-ms-expand {
+.income-data .deposit-bank::-ms-expand,
+.expenses-data .deposit-bank::-ms-expand {
     display: none
 }
 
-.data .deposit-bank:hover {
+.income-data .deposit-bank:hover,
+.expenses-data .deposit-bank:hover {
     border-color: #888
 }
 
-.data .deposit-bank:focus {
+.income-data .deposit-bank:focus,
+.expenses-data .deposit-bank:focus {
     border-color: #aaa;
     color: #222;
     outline: 0
 }
 
-.data .deposit-bank option {
+.income-data .deposit-bank option,
+.expenses-data .deposit-bank option {
     font-weight: 400
 }
 
-.data .deposit-amount,
-.data .deposit-percent {
+.income-data .deposit-amount,
+.income-data .deposit-percent,
+.expenses-data .deposit-amount,
+.expenses-data .deposit-percent {
     display: none
 }
 
-.data .target {
+.income-data .target,
+.expenses-data .target {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
 }
 
-.data .target-title {
+.income-data .target-title,
+.expenses-data .target-title {
     margin: auto 10px auto auto
 }
 
-.data .target-amount {
+.income-data .target-amount,
+.expenses-data .target-amount {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1
 }
 
-.data .period {
+.income-data .period,
+.expenses-data .period {
     text-align: center
 }
 
-.data .period-title {
+.income-data .period-title,
+.expenses-data .period-title {
     font-size: 20px;
     text-align: center
 }
 
-.data .period input[type=range].period-select {
+.income-data .period input[type=range].period-select,
+.expenses-data .period input[type=range].period-select {
     -webkit-appearance: none;
     width: 100%;
     margin: 9px 0
 }
 
-.data .period input[type=range].period-select:focus {
+.income-data .period input[type=range].period-select:focus,
+.expenses-data .period input[type=range].period-select:focus {
     outline: 0
 }
 
-.data .period input[type=range].period-select::-webkit-slider-runnable-track {
+.income-data .period input[type=range].period-select::-webkit-slider-runnable-track,
+.expenses-data .period input[type=range].period-select::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
 
@@ -285,7 +316,8 @@
     cursor: pointer;
 }
 
-.data .period input[type=range].period-select::-webkit-slider-thumb {
+.income-data .period input[type=range].period-select::-webkit-slider-thumb,
+.expenses-data .period input[type=range].period-select::-webkit-slider-thumb {
     height: 26px;
     width: 26px;
     margin-top: -9px;
@@ -297,11 +329,13 @@
     -webkit-appearance: none;
 }
 
-.data .period input[type=range].period-select:focus::-webkit-slider-runnable-track {
+.income-data .period input[type=range].period-select:focus::-webkit-slider-runnable-track,
+.expenses-data .period input[type=range].period-select:focus::-webkit-slider-runnable-track {
     background: rgba(239, 49, 36, .85)
 }
 
-.data .period input[type=range].period-select::-moz-range-track {
+.income-data .period input[type=range].period-select::-moz-range-track,
+.expenses-data .period input[type=range].period-select::-moz-range-track {
     width: 100%;
     height: 8px;
 
@@ -311,7 +345,8 @@
     cursor: pointer;
 }
 
-.data .period input[type=range].period-select::-moz-range-thumb {
+.income-data .period input[type=range].period-select::-moz-range-thumb,
+.expenses-data .period input[type=range].period-select::-moz-range-thumb {
     height: 26px;
     width: 26px;
 
@@ -321,7 +356,8 @@
     cursor: pointer;
 }
 
-.data .period input[type=range].period-select::-ms-track {
+.income-data .period input[type=range].period-select::-ms-track,
+.expenses-data .period input[type=range].period-select::-ms-track {
     width: 100%;
     height: 8px;
 
@@ -332,14 +368,17 @@
     cursor: pointer;
 }
 
-.data .period input[type=range].period-select::-ms-fill-lower,
-.data .period input[type=range].period-select::-ms-fill-upper {
+.income-data .period input[type=range].period-select::-ms-fill-lower,
+.income-data .period input[type=range].period-select::-ms-fill-upper,
+.expenses-data .period input[type=range].period-select::-ms-fill-lower,
+.expenses-data .period input[type=range].period-select::-ms-fill-upper {
     background: rgba(239, 49, 36, .85);
     border: 0 solid #000001;
     border-radius: 50px
 }
 
-.data .period input[type=range].period-select::-ms-thumb {
+.income-data .period input[type=range].period-select::-ms-thumb,
+.expenses-data .period input[type=range].period-select::-ms-thumb {
     width: 26px;
     height: 8px;
 
@@ -349,8 +388,10 @@
     cursor: pointer;
 }
 
-.data .period input[type=range].period-select:focus::-ms-fill-lower,
-.data .period input[type=range].period-select:focus::-ms-fill-upper {
+.income-data .period input[type=range].period-select:focus::-ms-fill-lower,
+.income-data .period input[type=range].period-select:focus::-ms-fill-upper,
+.expenses-data .period input[type=range].period-select:focus::-ms-fill-lower,
+.expenses-data .period input[type=range].period-select:focus::-ms-fill-upper {
     background: rgba(239, 49, 36, .85)
 }
 
@@ -428,7 +469,7 @@
     margin-top: 0
 }
 
-.result .control {
+.control {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -444,12 +485,12 @@
 
 }
 
-.result #cancel {
+#cancel {
     display: none
 }
 
-.result #cancel,
-.result #start {
+#cancel,
+#start {
     width: 262px;
     height: 67px;
 
@@ -466,12 +507,12 @@
     outline: transparent;
 }
 
-.result #cancel:hover,
-.result #start:hover {
+#cancel:hover,
+#start:hover {
     opacity: .7
 }
 
-.result #cancel:active,
+#cancel:active,
 .result #start:active {
     background-color: rgba(194, 13, 0, 0.897);
     color: #fff;
