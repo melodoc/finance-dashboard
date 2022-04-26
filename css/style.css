@@ -1,30 +1,30 @@
-@font-face {
-    font-family: Roboto;
-    src: url(../font/roboto-v20-latin_cyrillic-regular.woff2) format("woff2"), url(../font/roboto-v20-latin_cyrillic-regular) format("woff")
-}
-body {
-    padding-top: 40px;
+@import url('../vendor/normalize.css');
 
-    font-family: Roboto, sans-serif;
+@import url('../vendor/fonts/fonts.css');
 
-    background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url("../img/holding-bank-card.jpg");
-    background-size: cover;
-    color: #777;
+.body {
+    background-color: #FFFFFF;
+    color: #000000;
+    max-width: 1496px;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
 }
-* {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+
+.header-title {
     margin: 0;
     padding: 0;
-    outline: 0
+    margin-top: 20px;
+    margin-left: 40px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #1C1F3E;
 }
-a, 
-a:active,
-a:focus,
-a:hover,
-a:visited {
-    text-decoration: none
-}
+
 .calc {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -37,15 +37,7 @@ a:visited {
     -ms-flex-pack: center;
     justify-content: center
 }
-h1 {
-    margin-bottom: 50px;
 
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
-    color: #353a43;
-}
 .title {
     margin-top: 15px;
 
@@ -54,48 +46,56 @@ h1 {
     line-height: 24px;
     color: #353a43;
 }
+
 .title span {
     font-size: 14px;
     color: #adb1ba;
 }
+
 .data>div {
     padding-right: 30px;
 }
+
 .data input[type=text] {
     width: 263px;
     height: 20px;
     padding: 18px 16px;
     margin: 9px 30px 0 0;
 
-    background: rgba(11,31,53,.05);
+    background: rgba(11, 31, 53, .05);
     border: 0;
-    border-bottom: 1px solid rgba(11,31,53,.3);
+    border-bottom: 1px solid rgba(11, 31, 53, .3);
     border-radius: 4px 4px 0 0;
 }
+
 .data input[type=text]::-webkit-input-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .data input[type=text]:-moz-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .data input[type=text]::-moz-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .data input[type=text]:-ms-input-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .data .btn_plus {
     width: 30px;
     height: 30px;
@@ -106,20 +106,23 @@ h1 {
     text-align: center;
     line-height: 30px;
     color: #353a43;
-    
-    background-color:rgba(239,49,36,.85);
+
+    background-color: rgba(239, 49, 36, .85);
     outline: 0;
     border: none;
     cursor: pointer;
 }
+
 .data .btn_plus:hover {
     -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2)
 }
-.data .additional_expenses-item, 
+
+.data .additional_expenses-item,
 .data .salary-amount {
     width: calc(100% - 30px) !important
 }
+
 .data .deposit-label {
     position: relative;
 
@@ -135,6 +138,7 @@ h1 {
     -ms-user-select: none;
     user-select: none
 }
+
 .data .deposit-label input {
     position: absolute;
 
@@ -143,6 +147,7 @@ h1 {
     height: 0;
     width: 0
 }
+
 .data .deposit-label .deposit-checkmark {
     position: absolute;
     top: 0;
@@ -150,8 +155,9 @@ h1 {
 
     height: 23px;
     width: 23px;
-    background-color:rgba(239,49,36,.85);
+    background-color: rgba(239, 49, 36, .85);
 }
+
 .data .deposit-label .deposit-checkmark:after {
     position: absolute;
     top: 5px;
@@ -167,14 +173,17 @@ h1 {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
 }
+
 .data .deposit-label:hover input~.deposit-checkmark {
-    background-color: rgba(239,49,36,.85);
+    background-color: rgba(239, 49, 36, .85);
     -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2)
 }
+
 .data .deposit-label input:checked~.deposit-checkmark:after {
     display: block
 }
+
 .data .deposit-bank {
     display: none;
     width: 263px;
@@ -184,7 +193,7 @@ h1 {
 
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    
+
     font-family: Roboto, sans-serif;
     font-size: 14px;
     font-variant: small-caps;
@@ -195,7 +204,7 @@ h1 {
 
     -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .2);
-    border: 1px solid rgba(11,31,53,.6);
+    border: 1px solid rgba(11, 31, 53, .6);
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     -moz-appearance: none;
@@ -207,93 +216,111 @@ h1 {
     background-position: right .7em top 50%, 0 0;
     background-size: 20px auto, 100%
 }
+
 .data .deposit-bank::-ms-expand {
     display: none
 }
+
 .data .deposit-bank:hover {
     border-color: #888
 }
+
 .data .deposit-bank:focus {
     border-color: #aaa;
     color: #222;
     outline: 0
 }
+
 .data .deposit-bank option {
     font-weight: 400
 }
-.data .deposit-amount, 
+
+.data .deposit-amount,
 .data .deposit-percent {
     display: none
 }
+
 .data .target {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
 }
+
 .data .target-title {
     margin: auto 10px auto auto
 }
+
 .data .target-amount {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1
 }
+
 .data .period {
     text-align: center
 }
+
 .data .period-title {
     font-size: 20px;
     text-align: center
 }
+
 .data .period input[type=range].period-select {
     -webkit-appearance: none;
     width: 100%;
     margin: 9px 0
 }
+
 .data .period input[type=range].period-select:focus {
     outline: 0
 }
+
 .data .period input[type=range].period-select::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
 
-    background: rgba(239,49,36,.85);
+    background: rgba(239, 49, 36, .85);
     border: 0 solid #000001;
     border-radius: 25px;
     cursor: pointer;
 }
+
 .data .period input[type=range].period-select::-webkit-slider-thumb {
     height: 26px;
     width: 26px;
     margin-top: -9px;
 
-    background: rgba(239,49,36,.85);
+    background: rgba(239, 49, 36, .85);
     border: 4px solid #353a43;
     border-radius: 50px;
     cursor: pointer;
     -webkit-appearance: none;
 }
+
 .data .period input[type=range].period-select:focus::-webkit-slider-runnable-track {
-    background: rgba(239,49,36,.85)
+    background: rgba(239, 49, 36, .85)
 }
+
 .data .period input[type=range].period-select::-moz-range-track {
     width: 100%;
     height: 8px;
 
-    background: rgba(239,49,36,.85);
+    background: rgba(239, 49, 36, .85);
     border: 0 solid #000001;
     border-radius: 25px;
     cursor: pointer;
 }
+
 .data .period input[type=range].period-select::-moz-range-thumb {
     height: 26px;
     width: 26px;
 
-    background: rgba(239,49,36,.85);
+    background: rgba(239, 49, 36, .85);
     border: 4px solid #353a43;
     border-radius: 50px;
     cursor: pointer;
 }
+
 .data .period input[type=range].period-select::-ms-track {
     width: 100%;
     height: 8px;
@@ -304,25 +331,29 @@ h1 {
     border-color: transparent;
     cursor: pointer;
 }
-.data .period input[type=range].period-select::-ms-fill-lower, 
+
+.data .period input[type=range].period-select::-ms-fill-lower,
 .data .period input[type=range].period-select::-ms-fill-upper {
-    background: rgba(239,49,36,.85);
+    background: rgba(239, 49, 36, .85);
     border: 0 solid #000001;
     border-radius: 50px
 }
+
 .data .period input[type=range].period-select::-ms-thumb {
     width: 26px;
     height: 8px;
-    
-    background: rgba(239,49,36,.85);
+
+    background: rgba(239, 49, 36, .85);
     border: 4px solid #353a43;
     border-radius: 50px;
     cursor: pointer;
 }
-.data .period input[type=range].period-select:focus::-ms-fill-lower, 
+
+.data .period input[type=range].period-select:focus::-ms-fill-lower,
 .data .period input[type=range].period-select:focus::-ms-fill-upper {
-    background: rgba(239,49,36,.85)
+    background: rgba(239, 49, 36, .85)
 }
+
 .result {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -334,6 +365,7 @@ h1 {
     -ms-flex-pack: distribute;
     justify-content: space-around
 }
+
 .result div {
     width: 100%;
     padding: 10px 0px 5px 20px;
@@ -341,12 +373,14 @@ h1 {
     color: #353a43;
 
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(11,31,53,.4);
+    border: 1px solid rgba(11, 31, 53, .4);
     border-radius: 4px 4px 0 0;
 }
+
 .result div span {
     display: block
 }
+
 .result div input {
     min-width: 390px;
     margin-left: 65px;
@@ -355,39 +389,45 @@ h1 {
     font-family: Roboto;
     font-size: 14px;
     font-weight: 400;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 
     background-color: transparent;
     border: none;
     outline: 0;
 }
+
 .result div input::-webkit-input-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .result div input:-moz-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .result div input::-moz-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .result div input:-ms-input-placeholder {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: rgba(11,31,53,.6);
+    color: rgba(11, 31, 53, .6);
 }
+
 .result .title {
     margin-top: 0
 }
+
 .result .control {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -396,22 +436,24 @@ h1 {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0;
-    
+
     background-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
     border: 0;
 
 }
+
 .result #cancel {
     display: none
 }
-.result #cancel, 
+
+.result #cancel,
 .result #start {
     width: 262px;
     height: 67px;
 
-    background-color: rgba(239,49,36,.85);
+    background-color: rgba(239, 49, 36, .85);
     font-family: Roboto;
     font-size: 20px;
     line-height: 24px;
@@ -423,11 +465,14 @@ h1 {
     border: none;
     outline: transparent;
 }
-.result #cancel:hover, 
+
+.result #cancel:hover,
 .result #start:hover {
     opacity: .7
 }
-.result #cancel:active, .result #start:active {
+
+.result #cancel:active,
+.result #start:active {
     background-color: rgba(194, 13, 0, 0.897);
     color: #fff;
     opacity: 1
