@@ -11,18 +11,20 @@
 </head>
 
 <body class="body">
-    <h1 class="header-title">Welcome to the Finance Dashboard</h1>
-    <form class="dashboard" action="" autocomplete="off" method="get">
-        <div class="income-data">
-            <h2>Income</h2>
-            <div class="salary">
-                <label class="salary-title title">Enter income Per Month</label>
-                <input type="number" class="salary-amount" placeholder="Enter the amount">
+    <h1 class="dashboard-title">Welcome to the Finance Dashboard</h1>
+    <form class="dashboard-form" action="" autocomplete="off" method="get">
+        <section class="income-data">
+            <h2 class="income-header">Income</h2>
+            <div class="salary-amount">
+                <label class="salary-label" for="salary-input">Enter income Per Month
+                </label>
+                <span class="salary-currency">$</span>
+                <input class="salary-input" id="salary-input" type="number" placeholder="800.00">
             </div>
 
             <div class="income">
                 <div class="income-wrapper">
-                    <div class="income-title title">Side income</div>
+                    <h3 class="income-title title">Side income</h3>
                     <button class="btn_plus income_add" type="button">+</button>
                 </div>
                 <div class="income-items">
@@ -53,9 +55,9 @@
                     <input type="text" class="deposit-percent" placeholder="Custom rate" disabled>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="adjunct-data">
+        <section class="adjunct-data">
             <div class="expenses">
                 <h2>Expenses</h2>
                 <div class="expenses-wrapper">
@@ -94,9 +96,9 @@
                     <button type="reset" id="cancel">Reset</button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="result">
+        <section class="result">
             <h2>Summary</h2>
             <div class="result-budget_month">
                 <span class="title">Monthly net income</span>
@@ -129,7 +131,7 @@
                 <span class="title">Expenses</span>
                 <input type="text" class="result-total additional_expenses-value" placeholder="Cash withdrawl" disabled>
             </div>
-        </div>
+        </section>
     </form>
     <script src="./script/script.js"></script>
 </body>

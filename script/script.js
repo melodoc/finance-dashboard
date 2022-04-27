@@ -32,7 +32,7 @@ const budgetDay = document.querySelector('.budget_day-value'),
   addExpensesItem = document.querySelector('.additional_expenses-item'),
   targetMonth = document.querySelector('.target_month-value'),
   targetAmount = document.querySelector('.target-amount'),
-  salaryAmount = document.querySelector('.salary-amount');
+  salaryAmount = document.querySelector('.salary-input');
 
 let expensesItems = document.querySelectorAll('.expenses-items'),
   expensesTitle = document.querySelector('.expenses-title');
