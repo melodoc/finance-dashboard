@@ -47,7 +47,8 @@
 }
 
 .income-data input[type=text],
-.adjunct-data input[type=text] {
+.adjunct-data input[type=text],
+.salary-amount {
     width: 263px;
     height: 20px;
     padding: 18px 16px;
@@ -322,6 +323,12 @@
 .adjunct-data .period input[type=range].period-select:focus::-ms-fill-lower,
 .adjunct-data .period input[type=range].period-select:focus::-ms-fill-upper {
     background: rgba(239, 49, 36, .85)
+}
+
+.income-wrapper,
+.expenses-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .result {

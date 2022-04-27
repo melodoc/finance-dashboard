@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -12,117 +12,125 @@
 
 <body class="body">
     <h1 class="header-title">Welcome to the Finance Dashboard</h1>
-    <div class="dashboard">
+    <form class="dashboard" action="" autocomplete="off" method="get">
         <div class="income-data">
+            <h2>Income</h2>
             <div class="salary">
-                <label class="salary-title title">Месячный доход*</label>
-                <input type="text" class="salary-amount" placeholder="Сумма">
+                <label class="salary-title title">Enter income Per Month</label>
+                <input type="number" class="salary-amount" placeholder="Enter the amount">
             </div>
 
             <div class="income">
-                <div class="income-title title">Дополнительный доход</div>
-                <div class="income-items">
-                    <input type="text" class="income-title" placeholder="Наименование">
-                    <input type="text" class="income-amount" placeholder="Сумма">
+                <div class="income-wrapper">
+                    <div class="income-title title">Side income</div>
+                    <button class="btn_plus income_add" type="button">+</button>
                 </div>
-
-                <button class="btn_plus income_add">+</button>
+                <div class="income-items">
+                    <input type="text" class="income-title" placeholder="Enter the name">
+                    <input type="text" class="income-amount" placeholder="Enter the amount">
+                </div>
             </div>
 
             <div class="additional_income">
-                <div class="additional_income-title title">Возможный доход</div>
-                <input type="text" class="additional_income-item" placeholder="Наименование">
-                <input type="text" class="additional_income-item" placeholder="Наименование">
+                <div class="additional_income-title title">Name of possible income</div>
+                <input type="text" class="additional_income-item" placeholder="Possible income">
+                <input type="text" class="additional_income-item" placeholder="Possible income">
             </div>
 
             <div class="deposit">
-                <label class="deposit-label title">Депозит
+                <label class="deposit-label title">Term Deposit
                     <input id="deposit-check" type="checkbox">
                     <span class="deposit-checkmark"></span>
                 </label>
                 <select class="deposit-bank">
-                    <option value="0">Процент</option>
-                    <option value="0.03">Сбербанк</option>
-                    <option value="0.05">Альфабанк</option>
-                    <option value="0.09">Тинькофф</option>
-                    <option value="other">Другой</option>
+                    <option value="0.03">CitiBank</option>
+                    <option value="0.05">Wells Fargo</option>
+                    <option value="0.09">Chase</option>
+                    <option value="other">Custom rate</option>
                 </select>
                 <div class="deposit-dashboard">
-                    <input type="text" class="deposit-amount" placeholder="Сумма">
-                    <input type="text" class="deposit-percent" placeholder="Процент" disabled>
+                    <input type="text" class="deposit-amount" placeholder="Enter the amount">
+                    <input type="text" class="deposit-percent" placeholder="Custom rate" disabled>
                 </div>
             </div>
         </div>
 
         <div class="adjunct-data">
             <div class="expenses">
-                <div class="expenses-title title">Обязательные расходы</div>
-                <div class="expenses-items">
-                    <input type="text" class="expenses-title" placeholder="Наименование">
-                    <input type="text" class="expenses-amount" placeholder="Сумма">
+                <h2>Expenses</h2>
+                <div class="expenses-wrapper">
+                    <div class="expenses-title title">Mandatory expenses</div>
+                    <button type="button" class="btn_plus expenses_add">+</button>
                 </div>
 
-                <button class="btn_plus expenses_add">+</button>
+                <div class="expenses-items">
+                    <input type="text" class="expenses-title" placeholder="Enter the name">
+                    <input type="text" class="expenses-amount" placeholder="Enter the amount">
+                </div>
+
             </div>
 
             <div class="additional_expenses">
-                <div class="additional_expenses-title title">Возможные расходы <span>(перечислите через
-                        запятую)</span></div>
-                <input type="text" class="additional_expenses-item" placeholder="название">
+                <div class="additional_expenses-title title">Name of possible expenses <span>(separated by
+                        commas)</span></div>
+                <input type="text" class="additional_expenses-item" placeholder="Enter the name">
             </div>
 
             <div class="target-data">
+                <h2>The savings goal</h2>
                 <div class="target">
-                    <span class="target-title title">Цель</span>
-                    <input type="text" class="target-amount" placeholder="Сумма">
+                    <span class="target-title title">Enter the amount</span>
+                    <input type="text" class="target-amount" placeholder="Enter the amount">
                 </div>
 
                 <div class="period">
-                    <div class="title period-title">Период расчета</div>
-                    <input class="period-select" type="range" step="1" min="1" max="12" value="1">
-                    <div class="title period-amount">1</div>
+                    <div class="title period-title">Goal achievement period (months)</div>
+                    <input class="period-select" type="range" step="1" min="1" max="12" value="6">
+                    <div class="title period-amount">6</div>
                 </div>
 
                 <div class="control">
-                    <button id="start">Рассчитать</button>
-                    <button id="cancel">Сбросить</button>
+                    <button type="submit" id="start">Сalculate</button>
+                    <button type="reset" id="cancel">Reset</button>
                 </div>
             </div>
         </div>
 
         <div class="result">
+            <h2>Summary</h2>
             <div class="result-budget_month">
-                <span class="title">Доход за месяц</span>
+                <span class="title">Monthly net income</span>
                 <input type="text" class="result-total budget_month-value" placeholder="0" disabled>
             </div>
+            <div class="result-expenses_month">
+                <span class="title">Monthly expense</span>
+                <input type="text" class="result-total expenses_month-value" placeholder="0" disabled>
+            </div>
             <div class="result-budget_day">
-                <span class="title">Дневной бюджет</span>
+                <span class="title">Daily budget</span>
                 <input type="text" class="result-total budget_day-value" placeholder="0">
             </div>
 
-            <div class="result-expenses_month">
-                <span class="title">Расход за месяц</span>
-                <input type="text" class="result-total expenses_month-value" placeholder="0" disabled>
-            </div>
-            <div class="result-additional_income">
-                <span class="title">Возможные доходы</span>
-                <input type="text" class="result-total additional_income-value" placeholder="Наименования" disabled>
-            </div>
-            <div class="result-additional_expenses">
-                <span class="title">Возможные расходы</span>
-                <input type="text" class="result-total additional_expenses-value" placeholder="Наименования" disabled>
-            </div>
-
             <div class="result-income_period">
-                <span class="title">Накопления за период</span>
+                <span class="title">Savings for the period</span>
                 <input type="text" class="result-total income_period-value" placeholder="0" disabled>
             </div>
             <div class="result-target_month">
-                <span class="title">Срок достижения цели в месяцах</span>
-                <input type="text" class="result-total target_month-value" placeholder="Срок" disabled>
+                <span class="title">Months to reach the goal </span>
+                <input type="text" class="result-total target_month-value" placeholder="12" disabled>
+            </div>
+
+            <h3>Possible columns</h3>
+            <div class="result-additional_income">
+                <span class="title">Income</span>
+                <input type="text" class="result-total additional_income-value" placeholder="Bank of America" disabled>
+            </div>
+            <div class="result-additional_expenses">
+                <span class="title">Expenses</span>
+                <input type="text" class="result-total additional_expenses-value" placeholder="Cash withdrawl" disabled>
             </div>
         </div>
-    </div>
+    </form>
     <script src="./script/script.js"></script>
 </body>
 

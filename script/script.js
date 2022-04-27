@@ -12,6 +12,10 @@ const isString = function (string) {
   }
 };
 
+function insertAfter(newNode, referenceNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 const startBtn = document.querySelector('#start'),
   plusBtn = document.querySelectorAll('.btn_plus'),
   incomePlus = plusBtn[0],
@@ -85,6 +89,8 @@ class AppData {
 
     this.showResult();
 
+    // TODO: Create disabled function
+
     startBtn.disabled = true;
     startBtn.style.display = 'none';
 
@@ -93,6 +99,8 @@ class AppData {
 
     incomePlus.disabled = true;
     expensesPlus.disabled = true;
+
+    // TODO: Add disabled for inputs
 
     const inputText = document.querySelectorAll("input[type='text']");
 
@@ -167,13 +175,13 @@ class AppData {
     const target = event.target;
     console.info(target);
     const numberRegExp = /[^0-9]/g;
-    if (target.getAttribute('placeholder') === 'Сумма') {
+    if (target.getAttribute('placeholder') === 'Enter the amount') {
       // TODO: only numbers are accepted
       if (target.value.match(numberRegExp)) {
         target.value = target.value.replace(numberRegExp, '');
       }
     }
-    if (target.getAttribute('placeholder') === 'Наименование') {
+    if (target.getAttribute('placeholder') === 'Enter the name') {
       target.value = target.value.replace(/[^а-яА-ЯёЁ.,():"'|;\-]/g, '');
       target.className = `${target.className} wrong-value`;
       //  TODO: only russian is accepted
@@ -196,23 +204,9 @@ class AppData {
 
   addExpensesBlock() {
     const cloneExpensesItem = expensesItems[0].cloneNode(true);
-    expensesItems[0].parentNode.insertBefore(cloneExpensesItem, expensesPlus);
-
-    expensesItems = document.querySelectorAll('.expenses-items');
-
-    const cloneExpensesItemInput = cloneExpensesItem.querySelectorAll('input');
-    cloneExpensesItemInput.forEach((item) => {
-      item.value = '';
-    });
-
-    if (expensesItems.length === 3) {
-      expensesPlus.style.display = 'none';
-    }
-  }
-  //доделать
-  addExpensesIncomeBlock(items) {
-    const cloneExpensesItem = expensesItems[0].cloneNode(true);
-    expensesItems[0].parentNode.insertBefore(cloneExpensesItem, expensesPlus);
+    const expensesWrapper = document.querySelector('.expenses-wrapper');
+    // expensesItems[0].parentNode.insertBefore(cloneExpensesItem, expensesPlus);
+    insertAfter(cloneExpensesItem, expensesWrapper);
 
     expensesItems = document.querySelectorAll('.expenses-items');
 
@@ -250,7 +244,9 @@ class AppData {
 
   addIncomeBlock() {
     const cloneIncomeItem = incomeItems[0].cloneNode(true);
-    incomeItems[0].parentNode.insertBefore(cloneIncomeItem, incomePlus);
+    const incomeWrapper = document.querySelector('.income-wrapper');
+    // incomeItems[0].parentNode.insertBefore(cloneIncomeItem, incomePlus);
+    insertAfter(cloneIncomeItem, incomeWrapper);
 
     incomeItems = document.querySelectorAll('.income-items');
 
@@ -310,21 +306,11 @@ class AppData {
   }
 
   getTargetMonth() {
-    return targetAmount.value / this.budgetMonth;
-  }
-
-  getStatusIncome() {
-    if (this.budgetDay === 0) {
-      return 'У вас нулевой доход';
-    } else if (this.budgetDay > 0 && this.budgetDay < 600) {
-      return 'К сожалению у вас уровень дохода ниже среднего';
-    } else if (this.budgetDay >= 600 && this.budgetDay < 1200) {
-      return 'У вас средний уровень дохода';
-    } else if (this.budgetDay >= 1200) {
-      return 'У вас высокий уровень дохода';
-    } else {
-      return 'Что-то пошло не так';
+    console.log(targetAmount.value, this.budgetMonth);
+    if (!!this.budgetMonth) {
+      return targetAmount.value / this.budgetMonth;
     }
+    return 0;
   }
 
   getInfoDeposit() {
