@@ -51,7 +51,7 @@ const itemExpenses = document.querySelector('.expenses-title').value,
   depositPercent = document.querySelector('.deposit-percent');
 
 const incomeData = document.querySelector('.income-data');
-const expensesData = document.querySelector('.expenses-data');
+const expensesData = document.querySelector('.adjunct-data');
 
 window.onload = function () {
   startBtn.disabled = true;

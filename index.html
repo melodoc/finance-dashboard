@@ -12,7 +12,7 @@
 
 <body class="body">
     <h1 class="header-title">Welcome to the Finance Dashboard</h1>
-    <div class="calc">
+    <div class="dashboard">
         <div class="income-data">
             <div class="salary">
                 <label class="salary-title title">Месячный доход*</label>
@@ -47,14 +47,14 @@
                     <option value="0.09">Тинькофф</option>
                     <option value="other">Другой</option>
                 </select>
-                <div class="deposit-calc">
+                <div class="deposit-dashboard">
                     <input type="text" class="deposit-amount" placeholder="Сумма">
                     <input type="text" class="deposit-percent" placeholder="Процент" disabled>
                 </div>
             </div>
         </div>
 
-        <div class="expenses-data">
+        <div class="adjunct-data">
             <div class="expenses">
                 <div class="expenses-title title">Обязательные расходы</div>
                 <div class="expenses-items">
@@ -71,21 +71,23 @@
                 <input type="text" class="additional_expenses-item" placeholder="название">
             </div>
 
-            <div class="target">
-                <span class="target-title title">Цель</span>
-                <input type="text" class="target-amount" placeholder="Сумма">
-            </div>
+            <div class="target-data">
+                <div class="target">
+                    <span class="target-title title">Цель</span>
+                    <input type="text" class="target-amount" placeholder="Сумма">
+                </div>
 
-            <div class="period">
-                <div class="title period-title">Период расчета</div>
-                <input class="period-select" type="range" step="1" min="1" max="12" value="1">
-                <div class="title period-amount">1</div>
-            </div>
-        </div>
+                <div class="period">
+                    <div class="title period-title">Период расчета</div>
+                    <input class="period-select" type="range" step="1" min="1" max="12" value="1">
+                    <div class="title period-amount">1</div>
+                </div>
 
-        <div class="control">
-            <button id="start">Рассчитать</button>
-            <button id="cancel">Сбросить</button>
+                <div class="control">
+                    <button id="start">Рассчитать</button>
+                    <button id="cancel">Сбросить</button>
+                </div>
+            </div>
         </div>
 
         <div class="result">
