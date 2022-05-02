@@ -17,11 +17,11 @@ function insertAfter(newNode, referenceNode) {
 }
 
 const startBtn = document.querySelector('#start'),
-  plusBtn = document.querySelectorAll('.btn_plus'),
+  plusBtn = document.querySelectorAll('.header__button'),
   incomePlus = plusBtn[0],
   expensesPlus = plusBtn[1],
-  additionalIncomes = document.querySelectorAll('.additional_income-item'),
-  depositCheck = document.querySelector('#deposit-check');
+  additionalIncomes = document.querySelectorAll('#additional_income-item'),
+  depositCheck = document.querySelector('#custom-checkbox__input');
 
 const budgetDay = document.querySelector('.budget_day-value'),
   budgetMonth = document.querySelector('.budget_month-value'),
@@ -32,16 +32,17 @@ const budgetDay = document.querySelector('.budget_day-value'),
   addExpensesItem = document.querySelector('.additional_expenses-item'),
   targetMonth = document.querySelector('.target_month-value'),
   targetAmount = document.querySelector('.target-amount'),
-  salaryAmount = document.querySelector('.salary-input');
+  salaryAmount = document.querySelector('#salary-input');
 
 let expensesItems = document.querySelectorAll('.expenses-items'),
   expensesTitle = document.querySelector('.expenses-title');
 
-let incomeItems = document.querySelectorAll('.income-items'),
-  incomeTitle = document.querySelector('.income-title'),
-  incomeAmount = document.querySelector('.income-amount');
+let incomeItems = document.querySelectorAll('.input__wrapper'),
+  incomeAmount = document.querySelector('.input__input');
 
-const periodSelect = document.querySelector('.period-select'),
+  console.info(incomeItems);
+
+const periodSelect = document.querySelector('.custom-range'),
   periodAmount = document.querySelector('.period-amount'),
   incomePeriod = document.querySelector('.income_period-value'),
   cancelBtn = document.querySelector('#cancel');
@@ -50,12 +51,13 @@ let inputText = document.querySelectorAll("input[type='text']");
 
 const itemExpenses = document.querySelector('.expenses-title').value,
   cashExpenses = document.querySelector('.expenses-amount').value,
-  depositBank = document.querySelector('.deposit-bank'),
-  depositAmount = document.querySelector('.deposit-amount'),
-  depositPercent = document.querySelector('.deposit-percent');
+  depositBank = document.querySelector('.custom-select'),
+  // its display_none!
+  depositAmount = document.querySelector('#deposit-amount'),
+  depositPercent = document.querySelector('#deposit-percent');
 
-const incomeData = document.querySelector('.income-data');
-const expensesData = document.querySelector('.adjunct-data');
+const incomeData = document.querySelector('#income-data');
+const expensesData = document.querySelector('#adjunct-data');
 
 window.onload = function () {
   startBtn.disabled = true;
@@ -226,6 +228,7 @@ class AppData {
     const count = (item) => {
       const startStr = item.className.split('-')[0];
       console.log(startStr);
+      // now its input-large__label
       const itemTitle = item.querySelector(`.${startStr}-title`).value;
       const cashAmount = item.querySelector(`.${startStr}-amount`).value;
 
@@ -244,11 +247,11 @@ class AppData {
 
   addIncomeBlock() {
     const cloneIncomeItem = incomeItems[0].cloneNode(true);
-    const incomeWrapper = document.querySelector('.income-wrapper');
+    const incomeWrapper = document.querySelector('.header__wrapper');
     // incomeItems[0].parentNode.insertBefore(cloneIncomeItem, incomePlus);
     insertAfter(cloneIncomeItem, incomeWrapper);
 
-    incomeItems = document.querySelectorAll('.income-items');
+    incomeItems = document.querySelectorAll('.input__wrapper');
 
     const cloneIncomeItemInput = cloneIncomeItem.querySelectorAll('input');
     cloneIncomeItemInput.forEach((item) => {

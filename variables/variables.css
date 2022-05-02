@@ -5,5 +5,17 @@
     --silver: #a9b8cd;
     --cobalt-blue: #1c1f3e;
     --gray: #545454;
-    --hover-opacity: 0.6;
+    --purple: #623CE7;
+    --dark-purple: #492ea8;
+    --focus-opacity: 0.3;
+    --hover-opacity: 0.7;
+    --light-mint: #E2F1F1;
+    --bright-mint: #7ecece;
+    --ghost-light: #f4f3f6;
+    --ghost-dark: #f7f6f8;
+    --ghost-white: #f2eeff;
+    --purplish-light: #c0bccea4;
+    --pale-purplish: #9e82ffa4;
+    --box-shadow: 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
+    --icon-padding: 17px;
 }
