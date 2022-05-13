@@ -1,21 +1,32 @@
 :root {
+    /* colors */
     --black: #000000;
     --white: #ffffff;
     --smoky-white: #f3f2f2;
+    --gray: #545454;
+    --ghost-light: #f4f3f6;
+    --ghost-dark: #f7f6f8;
+    --ghost-white: #f2eeff;
     --silver: #a9b8cd;
     --cobalt-blue: #1c1f3e;
-    --gray: #545454;
     --purple: #623CE7;
+    --light-purple: #613ce79e;
     --dark-purple: #492ea8;
+    --purplish-light: #c0bccea4;
+    --pale-purplish: #9e82ffa4;
     --focus-opacity: 0.3;
     --hover-opacity: 0.7;
     --light-mint: #E2F1F1;
     --bright-mint: #7ecece;
-    --ghost-light: #f4f3f6;
-    --ghost-dark: #f7f6f8;
-    --ghost-white: #f2eeff;
-    --purplish-light: #c0bccea4;
-    --pale-purplish: #9e82ffa4;
+    /* shadow */
     --box-shadow: 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
-    --icon-padding: 17px;
+    /* element offsets */
+    --icon-offset: 10px;
+    --input-offset: 23px;
+    /* global offsets */
+    --offset-s: 17px;
+    --offset-l: 37px;
+    /* sizes */
+    --logo-width: 15px;
+    --logo-height: 12px;
 }
