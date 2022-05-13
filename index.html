@@ -1,223 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Finance Dashboard</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Finance Dashboard</title>
-</head>
-
-<body class="dashboard">
-    <h1 class="dashboard__title">Welcome to the Finance Dashboard</h1>
-    <form class="dashboard__form" action="" autocomplete="off" method="get">
-        <section class="section" id="income-data">
-            <h2 class="section__header">Income</h2>
-            <ul class="section__list">
-                <div class="header__wrapper">
-                    <h3 class="header__title income_logo">Income Per Month</h3>
-                </div>
-                <li class="input-large">
-                    <span class="input-large__currency">$</span>
-                    <input class="input-large__input" id="salary-input" type="number" min="0" placeholder="800.00">
-                    <label class="input-large__label" for="salary-input">Enter the amount</label>
-                </li>
-
-                <li class="margin-large">
-                    <div class="header__wrapper">
-                        <h3 class="header__title exchange-logo">Side income</h3>
-                        <button class="header__button" type="button">+</button>
-                    </div>
-
-                    <div class="input__wrapper">
-                        <label class="input__label">
-                            <img class="input__logo" alt="income" src="./img/income.svg" />
-                            <input class="input__input" type="text" placeholder="Enter the name">
-                        </label>
-                        <label class="input__label">
-                            <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
-                            <input class="input__input" type="number" min="0" placeholder="Enter the amount">
-                        </label>
-                    </div>
-                </li>
-
-                <li class="margin-large">
-                    <div class="header__wrapper">
-                        <h3 class="header__title card_logo">Name of possible income</h3>
-                    </div>
-                    <div class="input__wrapper">
-                        <label class="input__label">
-                            <img class="input__logo" alt="income" src="./img/income.svg" />
-                            <input class="input__input" id="additional_income-item-first" type="text"
-                                placeholder="Enter the name">
-                        </label>
-                        <label class="input__label">
-                            <img class="input__logo" alt="income" src="./img/income.svg" />
-                            <input class="input__input" id="additional_income-item-second" type="text"
-                                placeholder="Enter the name">
-                        </label>
-                    </div>
-                </li>
-
-                <li class="deposit">
-                    <div class="header__wrapper">
-                        <h3 class="header__title">Term Deposit</h3>
-                        <label class="custom-checkbox__label">
-                            <input class="custom-checkbox__input" id="custom-checkbox__input" type="checkbox"
-                                tabindex="-1">
-                            <span class="custom-checkbox__mark" tabindex="0"></span>
-                        </label>
-                    </div>
-                    <div class="custom-select__wrapper display_none">
-                        <img class="custom-select__icon" src="./img/mastercard.svg" />
-                        <p class="custom-select__label">Bank account</p>
-                        <select class="custom-select" id="deposit-bank">
-                            <option value="0.03">CitiBank</option>
-                            <option value="0.05">Wells Fargo</option>
-                            <option value="0.09">Chase</option>
-                            <option value="other">Custom rate</option>
-                        </select>
-                    </div>
-                    <div class="deposit-dashboard">
-                        <div class="input-large margin-small display_none">
-                            <span class="input-large__currency">$</span>
-                            <input class="input-large__input" id="deposit-amount" type="number" min="0"
-                                placeholder="800.00">
-                            <label class="input-large__label" for="deposit-amount">Enter the amount</label>
-                        </div>
-                        <div class="input__wrapper display_none">
-                            <label class="input__label">
-                                <img class="input__logo" alt="income" src="./img/income.svg" />
-                                <input class="input__input" type="text" placeholder="Enter the name"
-                                    value="Custom rate">
-                            </label>
-                            <label class="input__label">
-                                <img class="input__logo" alt="rate" src="./img/rate.svg" />
-                                <input class="input__input" id="deposit-percent" type="number" min="0"
-                                    placeholder="Enter the rate" value="10" disabled>
-                            </label>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="section" id="adjunct-data">
-            <h2 class="section__header">Expenses</h2>
-            <ul class="section__list">
-                <li class="margin-large">
-                    <div class="header__wrapper">
-                        <h3 class="header__title list_logo">Mandatory expenses</h3>
-                        <button class="header__button" type="button">+</button>
-                    </div>
-
-                    <div class="input__wrapper">
-                        <label class="input__label">
-                            <img class="input__logo" alt="expenses" src="./img/expenses.svg" />
-                            <input class="input__input" id="expenses-title" type="text" placeholder="Enter the name">
-                        </label>
-                        <label class="input__label">
-                            <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
-                            <input class="input__input" id="expenses-amount" type="number" min="0"
-                                placeholder="Enter the amount">
-                        </label>
-                    </div>
-                </li>
-
-                <li class="margin-large">
-                    <div class="header__wrapper">
-                        <h3 class="header__title card_logo">Name of possible expenses <span
-                                class="header__title-info">(separated by
-                                commas)</span></h3>
-                    </div>
-                    <div class="input__wrapper input__wrapper_single-input">
-                        <label class="input__label">
-                            <img class="input__logo" alt="income" src="./img/expenses.svg" />
-                            <input class="input__input" id="additional_expenses-item" type="text"
-                                placeholder="Enter the name">
-                        </label>
-                    </div>
-                </li>
-            </ul>
-
-            <section class="savings-goal">
-                <h2 class="section__header">The savings goal</h2>
+    <body class="dashboard">
+        <h1 class="dashboard__title">Welcome to the Finance Dashboard</h1>
+        <form class="dashboard__form" action="" autocomplete="off" method="get">
+            <section class="section" id="income-data">
+                <h2 class="section__header">Income</h2>
                 <ul class="section__list">
+                    <div class="header__wrapper">
+                        <h3 class="header__title income_logo">Income Per Month</h3>
+                    </div>
                     <li class="input-large">
                         <span class="input-large__currency">$</span>
-                        <input class="input-large__input" id="target-input" type="number" min="0" placeholder="800.00">
-                        <label class="input-large__label" for="target-input">Enter the amount</label>
+                        <input
+                            class="input-large__input"
+                            id="salary-input"
+                            type="number"
+                            min="0"
+                            placeholder="800.00"
+                        />
+                        <label class="input-large__label" for="salary-input">Enter the amount</label>
                     </li>
 
-                    <li class="custom-range">
-                        <h3 class="header__title margin-small ">Goal achievement period <span
-                                class="header__title-info">(months)</span></h3>
-                        <div class="custom-range__wrapper">
-                            <input class="custom-range__input" type="range" step="1" min="0" max="12" value="6">
-                            <div class="custom-range__title" id="period-amount">6</div>
+                    <li class="margin-large">
+                        <div class="header__wrapper">
+                            <h3 class="header__title exchange-logo">Side income</h3>
+                            <button class="header__button" type="button">+</button>
+                        </div>
+
+                        <div class="input__wrapper">
+                            <label class="input__label">
+                                <img class="input__logo" alt="income" src="./img/income.svg" />
+                                <input class="input__input" type="text" placeholder="Enter the name" />
+                            </label>
+                            <label class="input__label">
+                                <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
+                                <input class="input__input" type="number" min="0" placeholder="Enter the amount" />
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="margin-large">
+                        <div class="header__wrapper">
+                            <h3 class="header__title card_logo">Name of possible income</h3>
+                        </div>
+                        <div class="input__wrapper">
+                            <label class="input__label">
+                                <img class="input__logo" alt="income" src="./img/income.svg" />
+                                <input
+                                    class="input__input"
+                                    id="additional_income-item-first"
+                                    type="text"
+                                    placeholder="Enter the name"
+                                />
+                            </label>
+                            <label class="input__label">
+                                <img class="input__logo" alt="income" src="./img/income.svg" />
+                                <input
+                                    class="input__input"
+                                    id="additional_income-item-second"
+                                    type="text"
+                                    placeholder="Enter the name"
+                                />
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="deposit">
+                        <div class="header__wrapper">
+                            <h3 class="header__title">Term Deposit</h3>
+                            <label class="custom-checkbox__label">
+                                <input
+                                    class="custom-checkbox__input"
+                                    id="custom-checkbox__input"
+                                    type="checkbox"
+                                    tabindex="-1"
+                                />
+                                <span class="custom-checkbox__mark" tabindex="0"></span>
+                            </label>
+                        </div>
+                        <div class="custom-select__wrapper display_none">
+                            <img class="custom-select__icon" src="./img/mastercard.svg" />
+                            <p class="custom-select__label">Bank account</p>
+                            <select class="custom-select" id="deposit-bank">
+                                <option value="0.03">CitiBank</option>
+                                <option value="0.05">Wells Fargo</option>
+                                <option value="0.09">Chase</option>
+                                <option value="other">Custom rate</option>
+                            </select>
+                        </div>
+                        <div class="deposit-dashboard">
+                            <div class="input-large margin-small display_none">
+                                <span class="input-large__currency">$</span>
+                                <input
+                                    class="input-large__input"
+                                    id="deposit-amount"
+                                    type="number"
+                                    min="0"
+                                    placeholder="800.00"
+                                />
+                                <label class="input-large__label" for="deposit-amount">Enter the amount</label>
+                            </div>
+                            <div class="input__wrapper display_none">
+                                <label class="input__label">
+                                    <img class="input__logo" alt="income" src="./img/income.svg" />
+                                    <input
+                                        class="input__input"
+                                        type="text"
+                                        placeholder="Enter the name"
+                                        value="Custom rate"
+                                    />
+                                </label>
+                                <label class="input__label">
+                                    <img class="input__logo" alt="rate" src="./img/rate.svg" />
+                                    <input
+                                        class="input__input"
+                                        id="deposit-percent"
+                                        type="number"
+                                        min="0"
+                                        placeholder="Enter the rate"
+                                        value="10"
+                                        disabled
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="adjunct-data">
+                <h2 class="section__header">Expenses</h2>
+                <ul class="section__list">
+                    <li class="margin-large">
+                        <div class="header__wrapper">
+                            <h3 class="header__title list_logo">Mandatory expenses</h3>
+                            <button class="header__button" type="button">+</button>
+                        </div>
+
+                        <div class="input__wrapper">
+                            <label class="input__label">
+                                <img class="input__logo" alt="expenses" src="./img/expenses.svg" />
+                                <input
+                                    class="input__input"
+                                    id="expenses-title"
+                                    type="text"
+                                    placeholder="Enter the name"
+                                />
+                            </label>
+                            <label class="input__label">
+                                <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
+                                <input
+                                    class="input__input"
+                                    id="expenses-amount"
+                                    type="number"
+                                    min="0"
+                                    placeholder="Enter the amount"
+                                />
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="margin-large">
+                        <div class="header__wrapper">
+                            <h3 class="header__title card_logo">
+                                Name of possible expenses <span class="header__title-info">(separated by commas)</span>
+                            </h3>
+                        </div>
+                        <div class="input__wrapper input__wrapper_single-input">
+                            <label class="input__label">
+                                <img class="input__logo" alt="income" src="./img/expenses.svg" />
+                                <input
+                                    class="input__input"
+                                    id="additional_expenses-item"
+                                    type="text"
+                                    placeholder="Enter the name"
+                                />
+                            </label>
                         </div>
                     </li>
                 </ul>
 
-                <div class="control">
-                    <button class="control__button" type="submit" id="start">Calculate</button>
-                    <button class="control__button display_none" type="reset" id="cancel">Reset</button>
+                <section class="savings-goal">
+                    <h2 class="section__header">The savings goal</h2>
+                    <ul class="section__list">
+                        <li class="input-large">
+                            <span class="input-large__currency">$</span>
+                            <input
+                                class="input-large__input"
+                                id="target-input"
+                                type="number"
+                                min="0"
+                                placeholder="800.00"
+                            />
+                            <label class="input-large__label" for="target-input">Enter the amount</label>
+                        </li>
+
+                        <li class="custom-range">
+                            <h3 class="header__title margin-small">
+                                Goal achievement period <span class="header__title-info">(months)</span>
+                            </h3>
+                            <div class="custom-range__wrapper">
+                                <input class="custom-range__input" type="range" step="1" min="0" max="12" value="6" />
+                                <div class="custom-range__title" id="period-amount">6</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="control">
+                        <button class="control__button" type="submit" id="start">Calculate</button>
+                        <button class="control__button display_none" type="reset" id="cancel">Reset</button>
+                    </div>
+                </section>
+            </section>
+
+            <section class="section" id="result">
+                <h2 class="section__header">Summary</h2>
+                <ul class="section__list margin-large">
+                    <li class="icon-paragraph icon-money">
+                        <label class="icon-paragraph__title">Monthly net income</label>
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="budget_month-result"
+                            value="$10,596.80"
+                            readonly
+                        />
+                    </li>
+                    <li class="icon-paragraph icon-expense">
+                        <label class="icon-paragraph__title">Monthly expense</label>
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="expenses_month-result"
+                            value="$10,596.80"
+                            readonly
+                        />
+                    </li>
+                    <li class="icon-paragraph icon-budget">
+                        <label class="icon-paragraph__title">Daily budget</label>
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="budget_day-result"
+                            value="$10,596.80"
+                            readonly
+                        />
+                    </li>
+
+                    <li class="icon-paragraph icon-savings">
+                        <label class="icon-paragraph__title">Savings for the period</label>
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="income_period-result"
+                            value="$10,596.80"
+                            readonly
+                        />
+                    </li>
+                </ul>
+
+                <div class="input-result__wrapper">
+                    <label class="input__label">
+                        <input class="input-result__text" type="text" value="Months to reach the goal" readonly />
+                    </label>
+                    <label class="input__label">
+                        <input
+                            class="input-result__text input-result_text-purple"
+                            id="target_month-result"
+                            type="number"
+                            value="12"
+                            readonly
+                        />
+                    </label>
+                </div>
+
+                <h2 class="section__header">Possible columns</h2>
+                <div class="section__list">
+                    <div class="result-additional_income">
+                        <h3 class="title">Income</h3>
+                        <p class="result-total additional_income-value">Bank of America</p>
+                    </div>
+                    <div class="result-additional_expenses">
+                        <h3 class="title">Expenses</h3>
+                        <p class="result-total additional_expenses-value">Cash withdrawal</p>
+                    </div>
                 </div>
             </section>
-        </section>
-
-        <section class="section" id="result">
-            <h2 class="section__header">Summary</h2>
-            <ul class="section__list margin-large">
-                <li class="icon-paragraph icon-money">
-                    <label class="icon-paragraph__title">Monthly net income</label>
-                    <input class="icon-paragraph__input" type="text" id="budget_month-result" value="$10,596.80"
-                        readonly>
-                </li>
-                <li class="icon-paragraph icon-expense">
-                    <label class="icon-paragraph__title">Monthly expense</label>
-                    <input class="icon-paragraph__input" type="text" id="expenses_month-result" value="$10,596.80"
-                        readonly>
-                </li>
-                <li class="icon-paragraph icon-budget">
-                    <label class="icon-paragraph__title">Daily budget</label>
-                    <input class="icon-paragraph__input" type="text" id="budget_day-result" value="$10,596.80" readonly>
-                </li>
-
-                <li class="icon-paragraph icon-savings">
-                    <label class="icon-paragraph__title">Savings for the period</label>
-                    <input class="icon-paragraph__input" type="text" id="income_period-result" value="$10,596.80"
-                        readonly>
-                </li>
-            </ul>
-
-            <div class="input-result__wrapper">
-                <label class="input__label">
-                    <input class="input-result__text" type="text" value="Months to reach the goal" readonly>
-                </label>
-                <label class="input__label">
-                    <input class="input-result__text input-result_text-purple" id="target_month-result" type="number"
-                        value="12" readonly>
-                </label>
-            </div>
-
-            <h2 class="section__header">Possible columns</h2>
-            <div class="section__list">
-                <div class="result-additional_income">
-                    <h3 class="title">Income</h3>
-                    <p class="result-total additional_income-value">Bank of America</p>
-                </div>
-                <div class="result-additional_expenses">
-                    <h3 class="title">Expenses</h3>
-                    <p class="result-total additional_expenses-value">Cash withdrawal</p>
-                </div>
-            </div>
-
-        </section>
-    </form>
-    <script type="module" src="./script/script.js"></script>
-</body>
-
+        </form>
+        <script type="module" src="./script/script.js"></script>
+    </body>
 </html>

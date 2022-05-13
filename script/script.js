@@ -96,7 +96,6 @@
 
 //     // TODO: Add disabled for inputs
 
-
 //     inputText.forEach((item) => {
 //       item.disabled = true;
 //     });

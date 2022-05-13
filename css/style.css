@@ -133,7 +133,7 @@
 
     display: flex;
     align-items: center;
-    
+
     width: 100%;
 }
 
@@ -152,7 +152,6 @@
     padding-right: var(--input-offset);
     padding-left: calc(var(--input-offset) * 2);
 
-    
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
@@ -164,7 +163,7 @@
     border-radius: 10px;
 
     transition: box-shadow 300ms ease-out;
-    
+
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -227,7 +226,7 @@
     transition: box-shadow 300ms ease-out;
 }
 
-.input-large__input:focus~.input-large__label {
+.input-large__input:focus ~ .input-large__label {
     position: absolute;
     top: 18px;
     left: var(--input-offset);
@@ -249,14 +248,13 @@
     transition: 0.5s ease-in-out;
 }
 
-.input-large__input:not(:focus):not(:placeholder-shown)~.input-large__label {
+.input-large__input:not(:focus):not(:placeholder-shown) ~ .input-large__label {
     position: absolute;
     top: 18px;
     left: var(--input-offset);
 
     font-size: 12px;
 }
-
 
 .input-large__label:hover {
     color: var(--cobalt-blue);
@@ -397,7 +395,7 @@
     cursor: pointer;
 }
 
-.custom-checkbox__label:hover .custom-checkbox__input~.custom-checkbox__mark {
+.custom-checkbox__label:hover .custom-checkbox__input ~ .custom-checkbox__mark {
     transition: 0.5s ease-in-out;
 
     opacity: var(--hover-opacity);
@@ -408,7 +406,7 @@
 
     display: none;
 
-    content: "";
+    content: '';
 }
 
 .custom-checkbox__mark:focus {
@@ -418,7 +416,7 @@
     backdrop-filter: blur(6px);
 }
 
-.custom-checkbox__label .custom-checkbox__input:checked~.custom-checkbox__mark:after {
+.custom-checkbox__label .custom-checkbox__input:checked ~ .custom-checkbox__mark:after {
     display: block;
 }
 
@@ -619,11 +617,11 @@
 .custom-range__wrapper .custom-range__input::-ms-fill-upper {
     background: var(--purple);
     border: 0 solid #000001;
-    border-radius: 500px
+    border-radius: 500px;
 }
 
 .custom-range__wrapper .custom-range__input:focus::-ms-fill-upper {
-    background: var(--purple)
+    background: var(--purple);
 }
 
 .custom-range__title {
@@ -784,7 +782,7 @@
     box-shadow: 0 0 40px var(--purplish-light);
     backdrop-filter: blur(6px);
     border-radius: 4px;
-    
+
     transition: 0.1s ease-in-out;
 }
 
@@ -806,7 +804,6 @@
 .margin-small {
     margin-bottom: 25px;
 }
-
 
 @media screen and (max-width: 1439px) {
     .dashboard__form {
