@@ -3,6 +3,8 @@
 @import url('../vendor/fonts/fonts.css');
 /* fonts */
 @import url('../variables/variables.css');
+/* decoration */
+@import url('./animation.css');
 
 * {
     box-sizing: border-box;
@@ -815,6 +817,11 @@
     animation-name: fadeIn;
 }
 
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
 @media screen and (max-width: 1439px) {
     .dashboard__form {
         grid-template-columns: repeat(3, 345px);
@@ -850,25 +857,5 @@
     .dashboard__title {
         margin-left: 0;
         text-align: center;
-    }
-}
-
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
     }
 }
