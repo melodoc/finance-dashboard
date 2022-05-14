@@ -2,6 +2,10 @@
 
 import { isString } from './utils/isString.js';
 import { isNumber } from './utils/isNumber.js';
+import { handleTitleContent } from './handleTitleContent/handleTitleContent.js';
+
+const dashboardTitle = document.querySelector('.dashboard__title');
+handleTitleContent(dashboardTitle);
 
 const render = (container, template, place = `beforeend`) => {
     container.insertAdjacentHTML(place, template);

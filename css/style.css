@@ -3,8 +3,6 @@
 @import url('../vendor/fonts/fonts.css');
 /* fonts */
 @import url('../variables/variables.css');
-/* decoration */
-@import url('./animation.css');
 
 * {
     box-sizing: border-box;
@@ -32,11 +30,6 @@
     line-height: 1.16;
 
     color: var(--cobalt-blue);
-
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
 }
 
 .dashboard__form {
@@ -234,7 +227,7 @@
     transition: box-shadow 300ms ease-out;
 }
 
-.input-large__input:focus ~ .input-large__label {
+.input-large__input:focus~.input-large__label {
     position: absolute;
     top: 18px;
     left: var(--input-offset);
@@ -256,7 +249,7 @@
     transition: 0.5s ease-in-out;
 }
 
-.input-large__input:not(:focus):not(:placeholder-shown) ~ .input-large__label {
+.input-large__input:not(:focus):not(:placeholder-shown)~.input-large__label {
     position: absolute;
     top: 18px;
     left: var(--input-offset);
@@ -403,7 +396,7 @@
     cursor: pointer;
 }
 
-.custom-checkbox__label:hover .custom-checkbox__input ~ .custom-checkbox__mark {
+.custom-checkbox__label:hover .custom-checkbox__input~.custom-checkbox__mark {
     transition: 0.5s ease-in-out;
 
     opacity: var(--hover-opacity);
@@ -424,7 +417,7 @@
     backdrop-filter: blur(6px);
 }
 
-.custom-checkbox__label .custom-checkbox__input:checked ~ .custom-checkbox__mark:after {
+.custom-checkbox__label .custom-checkbox__input:checked~.custom-checkbox__mark:after {
     display: block;
 }
 
@@ -811,16 +804,6 @@
 
 .margin-small {
     margin-bottom: 25px;
-}
-
-.fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-}
-
-.fadeOut {
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
 }
 
 @media screen and (max-width: 1439px) {
