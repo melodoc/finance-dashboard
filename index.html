@@ -18,7 +18,7 @@
                 <h2 class="section__header">Income</h2>
                 <ul class="section__list">
                     <div class="header__wrapper">
-                        <h3 class="header__title income_logo">Income Per Month</h3>
+                        <h3 class="header__title income_logo">Regular income per month</h3>
                     </div>
                     <li class="input-large">
                         <span class="input-large__currency">$</span>
@@ -173,9 +173,10 @@
 
                     <li class="margin-large">
                         <div class="header__wrapper">
-                            <h3 class="header__title card_logo">
-                                Name of possible expenses <span class="header__title-info">(separated by commas)</span>
-                            </h3>
+                            <h3 class="header__title card_logo">Name of possible expenses</h3>
+                            <span class="tooltip__wrapper" aria-label="Separated by commas" tabindex="0">
+                                <img class="tooltip__logo" alt="info" src="./img/info.svg" />
+                            </span>
                         </div>
                         <div class="input__wrapper input__wrapper_single-input">
                             <label class="input__label">
@@ -207,9 +208,13 @@
                         </li>
 
                         <li class="custom-range">
-                            <h3 class="header__title margin-small">
-                                Goal achievement period <span class="header__title-info">(months)</span>
-                            </h3>
+                            <div class="header__wrapper margin-small">
+                                <h3 class="header__title">Goal achievement period</h3>
+                                <span class="tooltip__wrapper" aria-label="Achievement period in months" tabindex="0">
+                                    <img class="tooltip__logo" alt="info" src="./img/info.svg" />
+                                </span>
+                            </div>
+
                             <div class="custom-range__wrapper">
                                 <input class="custom-range__input" type="range" step="1" min="0" max="12" value="6" />
                                 <div class="custom-range__title" id="period-amount">6</div>
