@@ -13,7 +13,7 @@
 
     <body class="dashboard">
         <h1 class="dashboard__title">Welcome to the Finance Dashboard!</h1>
-        <form class="dashboard__form" action="" autocomplete="off" method="get">
+        <form class="dashboard__form" action="" autocomplete="off" method="get" novalidate>
             <section class="section" id="income-data">
                 <h2 class="section__header">Income</h2>
                 <ul class="section__list">
@@ -27,8 +27,12 @@
                             id="salary-input"
                             type="number"
                             min="0"
+                            step="100"
                             placeholder="800.00"
+                            inputmode="decimal"
+                            pattern="[0-9]*"
                         />
+                        <span class="salary-input-error"></span>
                         <label class="input-large__label" for="salary-input">Enter the amount</label>
                     </li>
 
@@ -41,11 +45,28 @@
                         <div class="input__wrapper">
                             <label class="input__label">
                                 <img class="input__logo" alt="income" src="./img/income.svg" />
-                                <input class="input__input" type="text" placeholder="Enter the name" />
+                                <input
+                                    class="input__input"
+                                    id="income-name-input"
+                                    type="text"
+                                    placeholder="Enter the name"
+                                    inputmode="text"
+                                />
+                                <span class="income-name-input-error"></span>
                             </label>
                             <label class="input__label">
                                 <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
-                                <input class="input__input" type="number" min="0" placeholder="Enter the amount" />
+                                <input
+                                    class="input__input"
+                                    id="income-amount-input"
+                                    type="number"
+                                    min="0"
+                                    step="100"
+                                    inputmode="decimal"
+                                    pattern="[0-9]*"
+                                    placeholder="Enter the amount"
+                                />
+                                <span class="income-amount-input-error"></span>
                             </label>
                         </div>
                     </li>
@@ -62,7 +83,9 @@
                                     id="additional_income-item-first"
                                     type="text"
                                     placeholder="Enter the name"
+                                    inputmode="text"
                                 />
+                                <span class="additional_income-item-first-error"></span>
                             </label>
                             <label class="input__label">
                                 <img class="input__logo" alt="income" src="./img/income.svg" />
@@ -71,7 +94,9 @@
                                     id="additional_income-item-second"
                                     type="text"
                                     placeholder="Enter the name"
+                                    inputmode="text"
                                 />
+                                <span class="additional_income-item-second-error"></span>
                             </label>
                         </div>
                     </li>
@@ -107,19 +132,26 @@
                                     id="deposit-amount"
                                     type="number"
                                     min="0"
+                                    step="100"
                                     placeholder="800.00"
+                                    inputmode="decimal"
+                                    pattern="[0-9]*"
                                 />
+                                <span class="deposit-amount-error"></span>
                                 <label class="input-large__label" for="deposit-amount">Enter the amount</label>
                             </div>
                             <div class="input__wrapper display_none">
                                 <label class="input__label">
                                     <img class="input__logo" alt="income" src="./img/income.svg" />
                                     <input
+                                        id="custom-rate"
                                         class="input__input"
                                         type="text"
                                         placeholder="Enter the name"
                                         value="Custom rate"
+                                        inputmode="text"
                                     />
+                                    <span class="custom-rate-error"></span>
                                 </label>
                                 <label class="input__label">
                                     <img class="input__logo" alt="rate" src="./img/rate.svg" />
@@ -131,7 +163,9 @@
                                         placeholder="Enter the rate"
                                         value="10"
                                         disabled
+                                        step="0.1"
                                     />
+                                    <span class="deposit-percent-error"></span>
                                 </label>
                             </div>
                         </div>
@@ -156,7 +190,9 @@
                                     id="expenses-title"
                                     type="text"
                                     placeholder="Enter the name"
+                                    inputmode="text"
                                 />
+                                <span class="expenses-title-error"></span>
                             </label>
                             <label class="input__label">
                                 <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
@@ -165,8 +201,12 @@
                                     id="expenses-amount"
                                     type="number"
                                     min="0"
+                                    step="100"
+                                    inputmode="decimal"
+                                    pattern="[0-9]*"
                                     placeholder="Enter the amount"
                                 />
+                                <span class="expenses-amount-error"></span>
                             </label>
                         </div>
                     </li>
@@ -186,7 +226,9 @@
                                     id="additional_expenses-item"
                                     type="text"
                                     placeholder="Enter the name"
+                                    inputmode="text"
                                 />
+                                <span class="additional_expenses-item-error"></span>
                             </label>
                         </div>
                     </li>
@@ -202,8 +244,12 @@
                                 id="target-input"
                                 type="number"
                                 min="0"
+                                step="100"
                                 placeholder="800.00"
+                                inputmode="decimal"
+                                pattern="[0-9]*"
                             />
+                            <span class="target-input-error"></span>
                             <label class="input-large__label" for="target-input">Enter the amount</label>
                         </li>
 

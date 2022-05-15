@@ -133,7 +133,8 @@
     z-index: 1;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
 
     width: 100%;
 }
@@ -313,6 +314,23 @@
 .input-large__input:focus::-webkit-inner-spin-button,
 .input-large__input:hover::-webkit-inner-spin-button {
     opacity: var(--focus-opacity);
+}
+
+.input-error:focus {
+    outline: transparent;
+}
+
+.input-error {
+    border: 2px var(--error) solid;
+}
+
+.input-error_active {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--gray);
+
+    transition: 0.1s ease-in-out;
 }
 
 .header__title {
