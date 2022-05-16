@@ -36,7 +36,7 @@
                         <label class="input-large__label" for="salary-input">Enter the amount</label>
                     </li>
 
-                    <li class="margin-large">
+                    <li class="input-list">
                         <div class="header__wrapper">
                             <h3 class="header__title exchange-logo">Side income</h3>
                             <button class="header__button" type="button">+</button>
@@ -71,7 +71,7 @@
                         </div>
                     </li>
 
-                    <li class="margin-large">
+                    <li class="input-list">
                         <div class="header__wrapper">
                             <h3 class="header__title card_logo">Name of possible income</h3>
                         </div>
@@ -176,7 +176,7 @@
             <section class="section" id="adjunct-data">
                 <h2 class="section__header">Expenses</h2>
                 <ul class="section__list">
-                    <li class="margin-large">
+                    <li class="input-list">
                         <div class="header__wrapper">
                             <h3 class="header__title list_logo">Mandatory expenses</h3>
                             <button class="header__button" type="button">+</button>
@@ -187,12 +187,12 @@
                                 <img class="input__logo" alt="expenses" src="./img/expenses.svg" />
                                 <input
                                     class="input__input"
-                                    id="expenses-title"
+                                    id="expenses-name"
                                     type="text"
                                     placeholder="Enter the name"
                                     inputmode="text"
                                 />
-                                <span class="expenses-title-error"></span>
+                                <span class="expenses-name-error"></span>
                             </label>
                             <label class="input__label">
                                 <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
@@ -211,7 +211,7 @@
                         </div>
                     </li>
 
-                    <li class="margin-large">
+                    <li class="input-list">
                         <div class="header__wrapper">
                             <h3 class="header__title card_logo">Name of possible expenses</h3>
                             <span class="tooltip__wrapper" aria-label="Separated by commas" tabindex="0">
@@ -277,7 +277,7 @@
 
             <section class="section" id="result">
                 <h2 class="section__header">Summary</h2>
-                <ul class="section__list margin-large">
+                <ul class="section__list input-list">
                     <li class="icon-paragraph icon-money">
                         <label class="icon-paragraph__title">Monthly net income</label>
                         <input
@@ -349,6 +349,64 @@
                 </div>
             </section>
         </form>
+        <template id="side-income">
+            <div class="input__wrapper">
+                <label class="input__label">
+                    <img class="input__logo" alt="income" src="./img/income.svg" />
+                    <input
+                        class="input__input"
+                        id="income-name-input"
+                        type="text"
+                        placeholder="Enter the name"
+                        inputmode="text"
+                    />
+                    <span class="income-name-input-error"></span>
+                </label>
+                <label class="input__label">
+                    <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
+                    <input
+                        class="input__input"
+                        id="income-amount-input"
+                        type="number"
+                        min="0"
+                        step="100"
+                        inputmode="decimal"
+                        pattern="[0-9]*"
+                        placeholder="Enter the amount"
+                    />
+                    <span class="income-amount-input-error"></span>
+                </label>
+            </div>
+        </template>
+        <template id="mandatory-expenses">
+            <div class="input__wrapper">
+                <label class="input__label">
+                    <img class="input__logo" alt="expenses" src="./img/expenses.svg" />
+                    <input
+                        class="input__input"
+                        id="expenses-name"
+                        type="text"
+                        placeholder="Enter the name"
+                        inputmode="text"
+                    />
+                    <span class="expenses-name-error"></span>
+                </label>
+                <label class="input__label">
+                    <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
+                    <input
+                        class="input__input"
+                        id="expenses-amount"
+                        type="number"
+                        min="0"
+                        step="100"
+                        inputmode="decimal"
+                        pattern="[0-9]*"
+                        placeholder="Enter the amount"
+                    />
+                    <span class="expenses-amount-error"></span>
+                </label>
+            </div>
+        </template>
         <script type="module" src="./script/script.js"></script>
     </body>
 </html>

@@ -33,8 +33,8 @@ const setEventListeners = (formElement, inputSelector, validationHandler) => {
 };
 
 export const enableValidation = (inputValidations) => {
-    const formElement = '.dashboard__form';
-    const formList = Array.from(document.querySelectorAll(formElement));
+    const formClass = '.dashboard__form';
+    const formList = Array.from(document.querySelectorAll(formClass));
 
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {

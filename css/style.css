@@ -364,17 +364,23 @@
 }
 
 .header__button:focus {
-    outline: 2px var(--bright-mint) solid;
+    outline: 1px var(--bright-mint) solid;
     outline-offset: 2px;
     box-shadow: 0 0 25px var(--bright-mint);
 
-    transition: 0.1s ease-in-out;
+    transition: 0.05s ease-in-out;
 }
 
 .header__button:hover {
     opacity: var(--hover-opacity);
 
     transition: 0.5s ease-in-out;
+}
+
+.header__button:disabled {
+    color: var(--silver);
+
+    opacity: var(--hover-opacity);
 }
 
 .custom-checkbox__label {
@@ -807,7 +813,7 @@
     display: none;
 }
 
-.margin-large {
+.input-list {
     margin-bottom: var(--offset-l);
 }
 
