@@ -69,35 +69,23 @@
     margin-bottom: var(--offset-s);
 }
 
-.exchange-logo::before {
+.header__logo::before {
     padding-right: var(--icon-offset);
     width: var(--logo-width);
     height: var(--logo-height);
 
+    vertical-align: middle;
+}
+
+.exchange-logo::before {
     content: url('../../img/arrows.svg');
 }
 
 .list_logo::before {
-    padding-right: var(--icon-offset);
-    width: var(--logo-width);
-    height: var(--logo-height);
-
     content: url('../../img/list.svg');
 }
 
-.card_logo::before {
-    padding-right: var(--icon-offset);
-    width: var(--logo-width);
-    height: var(--logo-height);
-
-    content: url('../img/card.svg');
-}
-
 .income_logo::before {
-    padding-right: var(--icon-offset);
-    width: var(--logo-width);
-    height: var(--logo-height);
-
     content: url('../img/income-money.svg');
 }
 
@@ -377,7 +365,7 @@
     transition: 0.5s ease-in-out;
 }
 
-.header__button:disabled {
+.control__element_inactive {
     color: var(--silver);
 
     opacity: var(--hover-opacity);
@@ -710,7 +698,7 @@
     width: 57px;
     height: 57px;
 }
-
+/* vertical-align: middle; */
 .icon-money::before {
     content: url('../img/exchange-money.svg');
 }

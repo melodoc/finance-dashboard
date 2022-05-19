@@ -1,3 +1,6 @@
+import { disableElement } from '../elementStateHandle/disableElement.js';
+import { enableElement } from '../elementStateHandle/enableElement.js';
+
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add('input-error');
@@ -12,7 +15,7 @@ const hideInputError = (formElement, inputElement) => {
     errorElement.textContent = '';
 };
 
-const isValid = (formElement, inputElement, validationHandler) => {
+export const isValid = (formElement, inputElement, validationHandler) => {
     const inputValidation = validationHandler(inputElement.value);
 
     if (!inputValidation.isValid) {
@@ -22,8 +25,25 @@ const isValid = (formElement, inputElement, validationHandler) => {
     }
 };
 
+const hasInvalidInput = (inputList, validationHandler) => {
+    return inputList.some((inputElement) => {
+        return !validationHandler(inputElement.value).isValid;
+    });
+};
+
+export const toggleButtonState = (inputList, buttonElement, validationHandler) => {
+    if (hasInvalidInput(inputList, validationHandler)) {
+        disableElement(buttonElement);
+    } else {
+        enableElement(buttonElement);
+    }
+};
+
 const setEventListeners = (formElement, inputSelector, validationHandler) => {
     const inputList = Array.from(formElement.querySelectorAll(inputSelector));
+    const buttonElement = formElement.querySelector('.control__button[type=submit');
+
+    toggleButtonState(inputList, buttonElement, validationHandler);
 
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', () => {
@@ -32,8 +52,7 @@ const setEventListeners = (formElement, inputSelector, validationHandler) => {
     });
 };
 
-export const enableValidation = (inputValidations) => {
-    const formClass = '.dashboard__form';
+export const enableValidation = (formClass, inputValidations) => {
     const formList = Array.from(document.querySelectorAll(formClass));
 
     formList.forEach((formElement) => {
