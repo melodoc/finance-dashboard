@@ -1,15 +1,48 @@
-import { disableElement } from '../elementStyleHandle/disableElement.js';
-import { appendInputFromTemplate } from './appendInputFromTemplate.js';
+import { getUid } from '../utils/getUid.js';
+import { createElementFromTemplate } from '../manageTemplate/createElementFromTemplate.js';
+import { disableElement } from '../elementStateHandle/disableElement.js';
+import { updateValidation } from '../validation/enableValidation.js';
 
-export const handleInput = (templateId, container) => {
-    const inputLength = Array.from(container.querySelectorAll('.input__input[type=text]')).length;
-    const MAX_COUNT = 3;
+const appendElement = (container, element) => {
+    container.append(element);
+};
 
-    if (inputLength < MAX_COUNT) {
-        appendInputFromTemplate(templateId, container);
+const createInput = ({ template, selectors }) => {
+    const inputWrapper = createElementFromTemplate(template, selectors.wrapper);
+    const inputElements = Array.from(inputWrapper.querySelectorAll(selectors.input));
+    const errorElements = Array.from(inputWrapper.querySelectorAll(selectors.error));
+    const uid = getUid();
 
-        if (inputLength + 1 === MAX_COUNT) {
-            disableElement(container, '.header__button');
+    inputElements.map((inputElement, index) => {
+        errorElements[index].className = `${inputElement.id}${uid}-error`;
+        inputElement.id = `${inputElement.id}${uid}`;
+        inputElement.name = `${inputElement.id}${uid}`;
+    });
+
+    return inputWrapper;
+};
+
+export const appendInput = ({ elements, selectors, params }, hasEventListenerUpdated) => {
+    const inputLength = Array.from(elements.container.querySelectorAll(selectors.wrapper)).length;
+
+    if (inputLength < params.inputNumberLimit) {
+        const inputWrapper = createInput({
+            template: elements.template,
+            selectors: {
+                wrapper: selectors.wrapper,
+                input: selectors.input,
+                error: selectors.error
+            }
+        });
+
+        if (hasEventListenerUpdated) {
+            updateValidation({ selectors }, inputWrapper);
+        }
+
+        appendElement(elements.container, inputWrapper);
+
+        if (inputLength + 1 === params.inputNumberLimit) {
+            disableElement(elements.button);
         }
     }
 };
