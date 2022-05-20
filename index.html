@@ -31,6 +31,7 @@
                             placeholder="800.00"
                             inputmode="decimal"
                             pattern="[0-9]*"
+                            required
                         />
                         <span class="salary-input-error"></span>
                         <label class="input__label input__label_size_large" for="salary-input">Enter the amount</label>
@@ -157,7 +158,7 @@
                             </div>
 
                             <div class="custom-range__wrapper">
-                                <input class="custom-range__input" type="range" step="1" min="0" max="12" value="6" />
+                                <input id="goal-period" class="custom-range__input" type="range" step="1" min="0" max="12" value="6" />
                                 <div class="custom-range__title" id="period-amount">6</div>
                             </div>
                         </li>
@@ -285,6 +286,7 @@
                         type="text"
                         placeholder="Enter the name"
                         inputmode="text"
+                        required
                     />
                     <span class="expenses-name-error"></span>
                 </label>
