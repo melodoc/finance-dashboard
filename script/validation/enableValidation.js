@@ -68,17 +68,17 @@ export const updateValidation = ({ selectors }, inputWrapper) => {
 
     formList.forEach((formElement) => {
         const buttonElement = formElement.querySelector(selectors.submit);
-        const updatingInputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+        const updatedInputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
         const inputList = Array.from(formElement.querySelectorAll(selectors.input));
-        const allInputs = updatingInputList.concat(inputList);
+        const joinedAllInputsList = updatedInputList.concat(inputList);
 
-        updatingInputList.forEach((input) => {
+        updatedInputList.forEach((input) => {
             input.addEventListener('input', () => {
                 isValid(formElement, input);
-                toggleButtonState(allInputs, buttonElement);
+                toggleButtonState(joinedAllInputsList, buttonElement);
             });
         });
 
-        toggleButtonState(allInputs, buttonElement);
+        toggleButtonState(joinedAllInputsList, buttonElement);
     });
 };
