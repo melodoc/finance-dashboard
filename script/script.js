@@ -15,8 +15,6 @@ const addMandatoryExpensesButton = document.querySelectorAll('.header__button')[
 const mandatoryExpensesTemplate = document.querySelector('#mandatory-expenses').content;
 const mandatoryExpensesContainer = addMandatoryExpensesButton.closest('.input-list');
 
-const formClass = '.dashboard__form';
-
 const sideIncomeProps = setIncomeProps(sideIncomeTemplate, sideIncomeContainer, addSideIncomeButton);
 const mandatoryExpensesProps = setIncomeProps(mandatoryExpensesTemplate, mandatoryExpensesContainer, addMandatoryExpensesButton);
 
@@ -25,7 +23,7 @@ handleTitleContent(dashboardTitle);
 appendInput(sideIncomeProps);
 appendInput(mandatoryExpensesProps);
 
-enableValidation(formClass, validationProps);
+enableValidation(validationProps);
 
 addSideIncomeButton.addEventListener('click', () => {
     appendInput(sideIncomeProps, true);

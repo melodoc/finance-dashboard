@@ -10,6 +10,7 @@ export const setIncomeProps = (template, container, button) => {
             wrapper: '.input__wrapper',
             input: '.input__input_size_small',
             error: 'span',
+            submit: '.control__button[type=submit]'
         },
         params: {
             inputNumberLimit: 10
