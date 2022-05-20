@@ -30,7 +30,6 @@ const hasInvalidInput = (inputList) => {
 };
 
 export const toggleButtonState = (inputList, buttonElement) => {
-    console.info(hasInvalidInput(inputList), inputList);
     if (hasInvalidInput(inputList)) {
         disableElement(buttonElement);
     } else {
@@ -69,15 +68,17 @@ export const updateValidation = ({ selectors }, inputWrapper) => {
 
     formList.forEach((formElement) => {
         const buttonElement = formElement.querySelector(selectors.submit);
-        const inputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+        const updatingInputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+        const inputList = Array.from(formElement.querySelectorAll(selectors.input));
+        const allInputs = updatingInputList.concat(inputList);
 
-        toggleButtonState(inputList, buttonElement);
-
-        inputList.forEach((input) => {
+        updatingInputList.forEach((input) => {
             input.addEventListener('input', () => {
                 isValid(formElement, input);
-                toggleButtonState(inputList, buttonElement);
+                toggleButtonState(allInputs, buttonElement);
             });
         });
+
+        toggleButtonState(allInputs, buttonElement);
     });
 };

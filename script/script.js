@@ -4,7 +4,7 @@ import { handleTitleContent } from './handleTitleContent/handleTitleContent.js';
 import { appendInput } from './handleInput/handleInput.js';
 import { enableValidation } from './validation/enableValidation.js';
 import { validationProps } from './constants/constants.js';
-import {setIncomeProps} from './handleInput/setInputProps.js';
+import { setIncomeProps } from './handleInput/setInputProps.js';
 const dashboardTitle = document.querySelector('.dashboard__title');
 
 const addSideIncomeButton = document.querySelectorAll('.header__button')[0];
@@ -16,7 +16,11 @@ const mandatoryExpensesTemplate = document.querySelector('#mandatory-expenses').
 const mandatoryExpensesContainer = addMandatoryExpensesButton.closest('.input-list');
 
 const sideIncomeProps = setIncomeProps(sideIncomeTemplate, sideIncomeContainer, addSideIncomeButton);
-const mandatoryExpensesProps = setIncomeProps(mandatoryExpensesTemplate, mandatoryExpensesContainer, addMandatoryExpensesButton);
+const mandatoryExpensesProps = setIncomeProps(
+    mandatoryExpensesTemplate,
+    mandatoryExpensesContainer,
+    addMandatoryExpensesButton
+);
 
 handleTitleContent(dashboardTitle);
 
