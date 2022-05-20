@@ -28,9 +28,9 @@ appendInput(mandatoryExpensesProps);
 enableValidation(formClass, validationProps);
 
 addSideIncomeButton.addEventListener('click', () => {
-    appendInput(sideIncomeProps);
+    appendInput(sideIncomeProps, true);
 });
 
 addMandatoryExpensesButton.addEventListener('click', () => {
-    appendInput(mandatoryExpensesProps);
+    appendInput(mandatoryExpensesProps, true);
 });

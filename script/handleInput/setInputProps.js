@@ -6,9 +6,10 @@ export const setIncomeProps = (template, container, button) => {
             button
         },
         selectors: {
+            form: '.dashboard__form',
             wrapper: '.input__wrapper',
             input: '.input__input',
-            error: 'span'
+            error: 'span',
         },
         params: {
             inputNumberLimit: 10

@@ -1,6 +1,7 @@
 import { getUid } from '../utils/getUid.js';
 import { createElementFromTemplate } from '../manageTemplate/createElementFromTemplate.js';
 import { disableElement } from '../elementStateHandle/disableElement.js';
+import { updateValidation } from '../validation/enableValidation.js';
 
 const appendElement = (container, element) => {
     container.append(element);
@@ -21,7 +22,7 @@ const createInput = ({ template, selectors }) => {
     return inputWrapper;
 };
 
-export const appendInput = ({ elements, selectors, params }) => {
+export const appendInput = ({ elements, selectors, params }, hasEventListenerUpdated) => {
     const inputLength = Array.from(elements.container.querySelectorAll(selectors.wrapper)).length;
 
     if (inputLength < params.inputNumberLimit) {
@@ -33,6 +34,10 @@ export const appendInput = ({ elements, selectors, params }) => {
                 error: selectors.error
             }
         });
+
+        if (hasEventListenerUpdated) {
+            updateValidation({ selectors }, inputWrapper);
+        }
 
         appendElement(elements.container, inputWrapper);
 

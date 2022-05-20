@@ -1,5 +1,7 @@
 import { disableElement } from '../elementStateHandle/disableElement.js';
 import { enableElement } from '../elementStateHandle/enableElement.js';
+import { validateTextInput } from '../validation/validateTextInput.js';
+import { validateNumberInput } from '../validation/validateNumberInput.js';
 
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -62,6 +64,22 @@ export const enableValidation = (formClass, inputValidations) => {
 
         inputValidations.forEach((inputParams) => {
             setEventListeners(formElement, inputParams.inputSelector, inputParams.validationHandler);
+        });
+    });
+};
+
+export const updateValidation = ({ selectors }, inputWrapper) => {
+    const formList = Array.from(document.querySelectorAll(selectors.form));
+    formList.forEach((formElement) => {
+        const inputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+        inputList.forEach((input) => {
+            input.addEventListener('input', () => {
+                if (input.type === 'number') {
+                    isValid(formElement, input, validateNumberInput);
+                } else {
+                    isValid(formElement, input, validateTextInput);
+                }
+            });
         });
     });
 };
