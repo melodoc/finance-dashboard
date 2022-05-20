@@ -30,7 +30,6 @@ const hasInvalidInput = (inputList) => {
 };
 
 export const toggleButtonState = (inputList, buttonElement) => {
-    console.info(hasInvalidInput(inputList), inputList);
     if (hasInvalidInput(inputList)) {
         disableElement(buttonElement);
     } else {
@@ -38,9 +37,9 @@ export const toggleButtonState = (inputList, buttonElement) => {
     }
 };
 
-const setEventListeners = (formElement, inputSelector) => {
-    const inputList = Array.from(formElement.querySelectorAll(inputSelector));
-    const buttonElement = formElement.querySelector('.control__button[type=submit');
+const setEventListeners = (formElement, validationProps) => {
+    const inputList = Array.from(formElement.querySelectorAll(validationProps.input));
+    const buttonElement = formElement.querySelector(validationProps.submit);
 
     toggleButtonState(inputList, buttonElement);
 
@@ -52,15 +51,15 @@ const setEventListeners = (formElement, inputSelector) => {
     });
 };
 
-export const enableValidation = (formClass, validationProps) => {
-    const formList = Array.from(document.querySelectorAll(formClass));
+export const enableValidation = (validationProps) => {
+    const formList = Array.from(document.querySelectorAll(validationProps.form));
 
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
 
-        setEventListeners(formElement, validationProps.inputSelector);
+        setEventListeners(formElement, validationProps);
     });
 };
 
@@ -68,16 +67,18 @@ export const updateValidation = ({ selectors }, inputWrapper) => {
     const formList = Array.from(document.querySelectorAll(selectors.form));
 
     formList.forEach((formElement) => {
-        const buttonElement = formElement.querySelector('.control__button[type=submit');
-        const inputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+        const buttonElement = formElement.querySelector(selectors.submit);
+        const updatingInputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+        const inputList = Array.from(formElement.querySelectorAll(selectors.input));
+        const allInputs = updatingInputList.concat(inputList);
 
-        toggleButtonState(inputList, buttonElement);
-
-        inputList.forEach((input) => {
+        updatingInputList.forEach((input) => {
             input.addEventListener('input', () => {
                 isValid(formElement, input);
-                toggleButtonState(inputList, buttonElement);
+                toggleButtonState(allInputs, buttonElement);
             });
         });
+
+        toggleButtonState(allInputs, buttonElement);
     });
 };
