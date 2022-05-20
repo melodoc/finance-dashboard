@@ -26,6 +26,9 @@ const mandatoryExpensesContainer = addMandatoryExpensesButton.closest('.input-li
 const termDepositCheckBox = document.querySelector('#custom-checkbox__input');
 const depositBankSelect = document.querySelector('#deposit-bank');
 
+const goalAchievementPeriodInput = document.querySelector('#goal-period');
+const goalAchievementPeriodTitle = document.querySelector('.custom-range__title');
+
 const sideIncomeProps = setIncomeProps(sideIncomeTemplate, sideIncomeContainer, addSideIncomeButton);
 const mandatoryExpensesProps = setIncomeProps(
     mandatoryExpensesTemplate,
@@ -61,4 +64,8 @@ termDepositCheckBox.addEventListener('click', () => {
 
 depositBankSelect.addEventListener('change', () => {
     handleAdditionalSelect();
+});
+
+goalAchievementPeriodInput.addEventListener('input', () => {
+    goalAchievementPeriodTitle.textContent = goalAchievementPeriodInput.value;
 });
