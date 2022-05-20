@@ -1,12 +1,10 @@
 import { disableElement } from '../elementStateHandle/disableElement.js';
 import { enableElement } from '../elementStateHandle/enableElement.js';
-import { validateTextInput } from '../validation/validateTextInput.js';
-import { validateNumberInput } from '../validation/validateNumberInput.js';
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add('input-error');
-    errorElement.textContent = errorMessage;
+    errorElement.textContent = inputElement.validationMessage;
     errorElement.classList.add('input-error_active');
 };
 
@@ -17,44 +15,44 @@ const hideInputError = (formElement, inputElement) => {
     errorElement.textContent = '';
 };
 
-export const isValid = (formElement, inputElement, validationHandler) => {
-    const inputValidation = validationHandler(inputElement.value);
-
-    if (!inputValidation.isValid) {
-        showInputError(formElement, inputElement, inputValidation.errorText);
+export const isValid = (formElement, inputElement) => {
+    if (!inputElement.validity.valid) {
+        showInputError(formElement, inputElement);
     } else {
         hideInputError(formElement, inputElement);
     }
 };
 
-const hasInvalidInput = (inputList, validationHandler) => {
+const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
-        return !validationHandler(inputElement.value).isValid;
+        return !inputElement.validity.valid;
     });
 };
 
-export const toggleButtonState = (inputList, buttonElement, validationHandler) => {
-    if (hasInvalidInput(inputList, validationHandler)) {
+export const toggleButtonState = (inputList, buttonElement) => {
+    console.info(hasInvalidInput(inputList), inputList);
+    if (hasInvalidInput(inputList)) {
         disableElement(buttonElement);
     } else {
         enableElement(buttonElement);
     }
 };
 
-const setEventListeners = (formElement, inputSelector, validationHandler) => {
+const setEventListeners = (formElement, inputSelector) => {
     const inputList = Array.from(formElement.querySelectorAll(inputSelector));
     const buttonElement = formElement.querySelector('.control__button[type=submit');
 
-    toggleButtonState(inputList, buttonElement, validationHandler);
+    toggleButtonState(inputList, buttonElement);
 
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', () => {
-            isValid(formElement, inputElement, validationHandler);
+            isValid(formElement, inputElement);
+            toggleButtonState(inputList, buttonElement);
         });
     });
 };
 
-export const enableValidation = (formClass, inputValidations) => {
+export const enableValidation = (formClass, validationProps) => {
     const formList = Array.from(document.querySelectorAll(formClass));
 
     formList.forEach((formElement) => {
@@ -62,23 +60,23 @@ export const enableValidation = (formClass, inputValidations) => {
             evt.preventDefault();
         });
 
-        inputValidations.forEach((inputParams) => {
-            setEventListeners(formElement, inputParams.inputSelector, inputParams.validationHandler);
-        });
+        setEventListeners(formElement, validationProps.inputSelector);
     });
 };
 
 export const updateValidation = ({ selectors }, inputWrapper) => {
     const formList = Array.from(document.querySelectorAll(selectors.form));
+
     formList.forEach((formElement) => {
+        const buttonElement = formElement.querySelector('.control__button[type=submit');
         const inputList = Array.from(inputWrapper.querySelectorAll(selectors.input));
+
+        toggleButtonState(inputList, buttonElement);
+
         inputList.forEach((input) => {
             input.addEventListener('input', () => {
-                if (input.type === 'number') {
-                    isValid(formElement, input, validateNumberInput);
-                } else {
-                    isValid(formElement, input, validateTextInput);
-                }
+                isValid(formElement, input);
+                toggleButtonState(inputList, buttonElement);
             });
         });
     });

@@ -8,7 +8,7 @@ export const setIncomeProps = (template, container, button) => {
         selectors: {
             form: '.dashboard__form',
             wrapper: '.input__wrapper',
-            input: '.input__input',
+            input: '.input__input_size_small',
             error: 'span',
         },
         params: {
