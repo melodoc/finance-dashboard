@@ -1,6 +1,7 @@
 'use strict';
 
-import { handleTitleContent } from './handleTitleContent/handleTitleContent.js';
+import { handleTitleContent } from './handleContent/handleTitleContent.js';
+import { handleBudgetDayLabelContent } from './handleContent/handleBudgetDayLabelContent.js';
 import { appendInput } from './handleInput/handleInput.js';
 import { enableValidation } from './validation/enableValidation.js';
 import { validationProps } from './constants/constants.js';
@@ -28,6 +29,8 @@ const depositBankSelect = document.querySelector('#deposit-bank');
 
 const goalAchievementPeriodInput = document.querySelector('#goal-period');
 const goalAchievementPeriodTitle = document.querySelector('.custom-range__title');
+
+const budgetDayResultLabel = document.querySelector('[for="budget_day-result"]');
 
 const sideIncomeProps = setIncomeProps(sideIncomeTemplate, sideIncomeContainer, addSideIncomeButton);
 const mandatoryExpensesProps = setIncomeProps(
@@ -69,3 +72,5 @@ depositBankSelect.addEventListener('change', () => {
 goalAchievementPeriodInput.addEventListener('input', () => {
     goalAchievementPeriodTitle.textContent = goalAchievementPeriodInput.value;
 });
+
+handleBudgetDayLabelContent(budgetDayResultLabel);

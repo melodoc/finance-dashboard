@@ -62,10 +62,10 @@
                             <img class="custom-select__icon" src="./img/mastercard.svg" />
                             <p class="custom-select__label">Bank account</p>
                             <select class="custom-select" id="deposit-bank">
-                                <option value="0.03">CitiBank</option>
-                                <option value="0.05">Wells Fargo</option>
-                                <option value="0.09">Chase</option>
-                                <option value="other">Custom rate</option>
+                                <option class="custom-select__option" value="0.03">CitiBank</option>
+                                <option class="custom-select__option" value="0.05">Wells Fargo</option>
+                                <option class="custom-select__option" value="0.09">Chase</option>
+                                <option class="custom-select__option" value="other">Custom rate</option>
                             </select>
                         </div>
                         <div class="deposit-dashboard">
@@ -82,7 +82,9 @@
                                     pattern="[0-9]*"
                                 />
                                 <span class="deposit-amount-error"></span>
-                                <label class="input__label input__label_size_large" for="deposit-amount">Enter the amount</label>
+                                <label class="input__label input__label_size_large" for="deposit-amount"
+                                    >Enter the amount</label
+                                >
                             </div>
                             <div class="input__wrapper display_none">
                                 <label class="input__label input__label_size_small">
@@ -146,7 +148,9 @@
                                 required
                             />
                             <span class="target-input-error"></span>
-                            <label class="input__label input__label_size_large" for="target-input">Enter the amount</label>
+                            <label class="input__label input__label_size_large" for="target-input"
+                                >Enter the amount</label
+                            >
                         </li>
 
                         <li class="custom-range">
@@ -158,7 +162,15 @@
                             </div>
 
                             <div class="custom-range__wrapper">
-                                <input id="goal-period" class="custom-range__input" type="range" step="1" min="0" max="12" value="6" />
+                                <input
+                                    id="goal-period"
+                                    class="custom-range__input"
+                                    type="range"
+                                    step="1"
+                                    min="0"
+                                    max="12"
+                                    value="6"
+                                />
                                 <div class="custom-range__title" id="period-amount">6</div>
                             </div>
                         </li>
@@ -172,7 +184,7 @@
             </section>
 
             <section class="section" id="result">
-                <h2 class="section__header">Summary</h2>
+                <h2 class="section__header">Total</h2>
                 <ul class="section__list input-list">
                     <li class="icon-paragraph icon-money">
                         <label class="icon-paragraph__title">Monthly net income</label>
@@ -195,7 +207,7 @@
                         />
                     </li>
                     <li class="icon-paragraph icon-budget">
-                        <label class="icon-paragraph__title">Daily budget</label>
+                        <label class="icon-paragraph__title" for="budget_day-result">Daily budget</label>
                         <input
                             class="icon-paragraph__input"
                             type="text"
