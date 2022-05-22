@@ -895,18 +895,17 @@
 @media screen and (max-width: 1279px) {
     .dashboard__form {
         grid-template-columns: repeat(2, minmax(min-content, 319px));
-        grid-template-columns: repeat(3, minmax(min-content, 319px));
         grid-template-rows: auto;
         grid-gap: 35px;
     }
 
-    /* .section:nth-child(2) {
+    .section:nth-child(2) {
         order: 1;
     }
 
     .section:last-child {
         order: 0;
-    } */
+    }
 
     .dashboard__title {
         margin-left: 0;
