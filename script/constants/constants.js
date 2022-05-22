@@ -12,7 +12,7 @@ export const userInputProps = {
         dynamicInputIds: ['income-name-input', 'income-amount-input'],
         rangeSelector: undefined,
         customSelect: '#deposit-bank',
-        checkBox: '#custom-checkbox__input',
+        checkBox: '#custom-checkbox__input'
     },
     adjunct: {
         sectionSelector: '#adjunct-data',
@@ -40,16 +40,25 @@ export const month = {
     12: 'December'
 };
 
-const obj = {
-    total: {
-        income: 53,
-        expense: 34,
-        dailyBudget: 34,
-        savings: 34,
-        period: 12
-    },
-    summary: {
-        income: ['Bank of America'],
-        expenses: ['Cash withdrawal']
-    }
+export const daysInMonthsLeap = {
+    1: 31,
+    2: 29,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31
 };
+
+export const daysInMonths = {
+    ...daysInMonthsLeap,
+    2: 28
+};
+
+export const MONTHS_IN_YEAR = 12;
+export const HUNDRED_PERCENT = 100;
