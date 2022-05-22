@@ -4,7 +4,7 @@ import { handleTitleContent } from './handleContent/handleTitleContent.js';
 import { handleBudgetDayLabelContent } from './handleContent/handleBudgetDayLabelContent.js';
 import { appendInput } from './handleInput/handleInput.js';
 import { enableValidation } from './validation/enableValidation.js';
-import { validationProps } from './constants/constants.js';
+import { validationProps, userInputProps } from './constants/constants.js';
 import { setIncomeProps } from './handleInput/setInputProps.js';
 import {
     showTermDepositInput,
@@ -44,7 +44,7 @@ handleTitleContent(dashboardTitle);
 appendInput(sideIncomeProps);
 appendInput(mandatoryExpensesProps);
 
-enableValidation(validationProps);
+enableValidation(validationProps, userInputProps);
 
 addSideIncomeButton.addEventListener('click', () => {
     appendInput(sideIncomeProps, true);
