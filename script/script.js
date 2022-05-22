@@ -11,7 +11,8 @@ import {
     setTermDepositInputRequired,
     handleAdditionalSelect,
     hideTermDepositInput,
-    removeRequiredAttributes
+    removeRequiredAttributes,
+    removeTermDepositInputRequired
 } from './handleCheckbox/handleCheckbox.js';
 
 const dashboardTitle = document.querySelector('.dashboard__title');
@@ -54,13 +55,14 @@ addMandatoryExpensesButton.addEventListener('click', () => {
     appendInput(mandatoryExpensesProps, true);
 });
 
-termDepositCheckBox.addEventListener('click', () => {
+termDepositCheckBox.addEventListener('change', () => {
     if (termDepositCheckBox.checked) {
         showTermDepositInput();
         setTermDepositInputRequired();
         handleAdditionalSelect();
     } else {
         hideTermDepositInput();
+        removeTermDepositInputRequired();
         removeRequiredAttributes();
     }
 });
