@@ -5,7 +5,7 @@ const amountInput = depositContainer.querySelector('#deposit-amount');
 
 const depositBankSelect = customSelectWrapper.querySelector('#deposit-bank');
 const customRateWrapper = depositContainer.querySelector('.input__wrapper');
-const customRateNameInput = customRateWrapper.querySelector('#deposit-percent');
+const customRateNameInput = customRateWrapper.querySelector('#custom-deposit-percent');
 const customRatePercentInput = customRateWrapper.querySelector('#custom-rate');
 
 const setElementVisible = (element) => {
