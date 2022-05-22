@@ -2,7 +2,7 @@
 
 ## Link
 
-[Finance Dashboard](https://melodoc.github.io/budget-calculator/)
+[Finance Dashboard](https://melodoc.github.io/finance-dashboard/)
 
 ## Description
 
