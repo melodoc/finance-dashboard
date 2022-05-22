@@ -60,3 +60,7 @@ export const handleAdditionalSelect = () => {
 export const setTermDepositInputRequired = () => {
     amountInput.setAttribute('required', '');
 };
+
+export const removeTermDepositInputRequired = () => {
+    amountInput.removeAttribute('required');
+};

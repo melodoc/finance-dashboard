@@ -1,6 +1,8 @@
 import { disableElement } from '../elementStateHandle/disableElement.js';
 import { enableElement } from '../elementStateHandle/enableElement.js';
 import { getUserInputValues } from '../handleInput/getUserInputValues.js';
+import { calculateSummary } from '../calculateSummary/calculateSummary.js';
+import { handleResultSection } from '../handleContent/handleResultSection.js';
 
 const showInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -60,6 +62,9 @@ export const enableValidation = (validationProps, userInputProps) => {
             evt.preventDefault();
             const inputData = getUserInputValues(formElement, userInputProps.income);
             const adjunctData = getUserInputValues(formElement, userInputProps.adjunct);
+
+            const result = calculateSummary(inputData, adjunctData);
+            handleResultSection(result);
         });
 
         setEventListeners(formElement, validationProps);

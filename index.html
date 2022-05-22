@@ -30,7 +30,6 @@
                             max="1000000000000"
                             placeholder="800.00"
                             inputmode="decimal"
-                            pattern="[0-9]*"
                             required
                         />
                         <span class="salary-input-error"></span>
@@ -62,9 +61,9 @@
                             <img class="custom-select__icon" src="./img/mastercard.svg" />
                             <p class="custom-select__label">Bank account</p>
                             <select class="custom-select" id="deposit-bank">
-                                <option class="custom-select__option" value="0.03">CitiBank</option>
-                                <option class="custom-select__option" value="0.05">Wells Fargo</option>
-                                <option class="custom-select__option" value="0.09">Chase</option>
+                                <option class="custom-select__option" value="3">CitiBank</option>
+                                <option class="custom-select__option" value="5">Wells Fargo</option>
+                                <option class="custom-select__option" value="9">Chase</option>
                                 <option class="custom-select__option" value="other">Custom rate</option>
                             </select>
                         </div>
@@ -79,7 +78,6 @@
                                     max="1000000000000"
                                     placeholder="800.00"
                                     inputmode="decimal"
-                                    pattern="[0-9]*"
                                 />
                                 <span class="deposit-amount-error"></span>
                                 <label class="input__label input__label_size_large" for="deposit-amount"
@@ -144,7 +142,6 @@
                                 max="1000000000000"
                                 placeholder="800.00"
                                 inputmode="decimal"
-                                pattern="[0-9]*"
                                 required
                             />
                             <span class="target-input-error"></span>
@@ -187,7 +184,7 @@
                 <h2 class="section__header">Total</h2>
                 <ul class="section__list input-list">
                     <li class="icon-paragraph icon-money">
-                        <label class="icon-paragraph__title">Monthly net income</label>
+                        <label class="icon-paragraph__title">Monthly income</label>
                         <input
                             class="icon-paragraph__input"
                             type="text"
@@ -218,11 +215,21 @@
                     </li>
 
                     <li class="icon-paragraph icon-savings">
-                        <label class="icon-paragraph__title">Savings for the period</label>
+                        <label class="icon-paragraph__title">Total savings for the period</label>
                         <input
                             class="icon-paragraph__input"
                             type="text"
                             id="income_period-result"
+                            value="$10,596.80"
+                            readonly
+                        />
+                    </li>
+                    <li class="icon-paragraph icon-money">
+                        <label class="icon-paragraph__title">Bank deposit</label>
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="bank-deposit-result"
                             value="$10,596.80"
                             readonly
                         />
@@ -280,7 +287,6 @@
                         min="0"
                         max="1000000000000"
                         inputmode="decimal"
-                        pattern="[0-9]*"
                         placeholder="Enter the amount"
                         required
                     />
@@ -311,7 +317,6 @@
                         min="0"
                         max="1000000000000"
                         inputmode="decimal"
-                        pattern="[0-9]*"
                         placeholder="Enter the amount"
                         required
                     />
