@@ -8,6 +8,14 @@
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="icon" href="./img/favicon/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="./img/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#ffc40d" />
+        <meta name="theme-color" content="#ffffff" />
         <title>Finance Dashboard</title>
     </head>
 
@@ -152,8 +160,8 @@
 
                         <li class="custom-range">
                             <div class="header__wrapper margin_small">
-                                <h3 class="header__title">Goal achievement period</h3>
-                                <span class="tooltip__wrapper" aria-label="Achievement period in months" tabindex="0">
+                                <h3 class="header__title">Settlement period</h3>
+                                <span class="tooltip__wrapper" aria-label="Settlement period in months" tabindex="0">
                                     <img class="tooltip__logo" alt="info" src="./img/info.svg" />
                                 </span>
                             </div>
@@ -185,13 +193,7 @@
                 <ul class="section__list input-list">
                     <li class="icon-paragraph icon-money">
                         <label class="icon-paragraph__title">Monthly income</label>
-                        <input
-                            class="icon-paragraph__input"
-                            type="text"
-                            id="budget_month-result"
-                            value="$10,596.80"
-                            readonly
-                        />
+                        <input class="icon-paragraph__input" type="text" id="budget_month-result" value="0" readonly />
                     </li>
                     <li class="icon-paragraph icon-expense">
                         <label class="icon-paragraph__title">Monthly expense</label>
@@ -199,40 +201,22 @@
                             class="icon-paragraph__input"
                             type="text"
                             id="expenses_month-result"
-                            value="$10,596.80"
+                            value="0"
                             readonly
                         />
                     </li>
                     <li class="icon-paragraph icon-budget">
                         <label class="icon-paragraph__title" for="budget_day-result">Daily budget</label>
-                        <input
-                            class="icon-paragraph__input"
-                            type="text"
-                            id="budget_day-result"
-                            value="$10,596.80"
-                            readonly
-                        />
+                        <input class="icon-paragraph__input" type="text" id="budget_day-result" value="0" readonly />
                     </li>
 
                     <li class="icon-paragraph icon-savings">
                         <label class="icon-paragraph__title">Total savings for the period</label>
-                        <input
-                            class="icon-paragraph__input"
-                            type="text"
-                            id="income_period-result"
-                            value="$10,596.80"
-                            readonly
-                        />
+                        <input class="icon-paragraph__input" type="text" id="income_period-result" value="0" readonly />
                     </li>
                     <li class="icon-paragraph icon-money">
                         <label class="icon-paragraph__title">Bank deposit</label>
-                        <input
-                            class="icon-paragraph__input"
-                            type="text"
-                            id="bank-deposit-result"
-                            value="$10,596.80"
-                            readonly
-                        />
+                        <input class="icon-paragraph__input" type="text" id="bank-deposit-result" value="0" readonly />
                     </li>
                 </ul>
 
@@ -245,7 +229,7 @@
                             class="input-result__text input-result_text-purple"
                             id="target_month-result"
                             type="number"
-                            value="12"
+                            value="0"
                             readonly
                         />
                     </label>
@@ -255,11 +239,11 @@
                 <div class="section__list">
                     <div class="result-additional_income">
                         <h3 class="title">Income</h3>
-                        <p class="result-total additional_income-value">Bank of America</p>
+                        <p class="result-total additional_income-value">All tne income names</p>
                     </div>
                     <div class="result-additional_expenses">
                         <h3 class="title">Expenses</h3>
-                        <p class="result-total additional_expenses-value">Cash withdrawal</p>
+                        <p class="result-total additional_expenses-value">All the expenses names</p>
                     </div>
                 </div>
             </section>
