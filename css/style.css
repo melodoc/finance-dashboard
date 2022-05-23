@@ -11,7 +11,6 @@
 .dashboard {
     max-width: 1440px;
     margin: 0 auto;
-    padding-bottom: var(--offset-l);
 
     background-color: var(--white);
     color: var(--black);
@@ -159,6 +158,12 @@
     overflow: hidden;
 }
 
+.input__input[type=number] {
+    font-family: 'Tomorrow', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
 .input__input:focus {
     outline: 2px var(--light-purple) solid;
     outline-offset: 2px;
@@ -182,6 +187,7 @@
 
     color: var(--silver);
 
+    font-family: 'Raleway';
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -630,6 +636,7 @@
     line-height: 24px;
     color: var(--cobalt-blue);
 }
+
 
 .control {
     display: flex;
