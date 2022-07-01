@@ -12,11 +12,11 @@ const getSalary = (inputData) => {
     return Number(inputData['salary-input']);
 };
 
-const getTotalIncome = (inputData) => {
+const getMonthlyIncome = (inputData) => {
     return getDynamicAmount(inputData.dynamicInput.amount) + getSalary(inputData);
 };
 
-const getBankDeposit = (inputData, adjunctData) => {
+const getBankDeposit = (inputData, adjunctData, isMonthly) => {
     const depositAmount = Number(inputData['deposit-amount']);
     const depositPeriod = Number(adjunctData.period);
     let depositRate;
@@ -27,7 +27,12 @@ const getBankDeposit = (inputData, adjunctData) => {
         depositRate = Number(inputData['custom-deposit-percent']);
     }
 
-    return ((depositAmount * depositRate) / HUNDRED_PERCENT / MONTHS_IN_YEAR) * depositPeriod;
+    const depositAmountPercent = isMonthly
+        ? (depositAmount * depositRate) / HUNDRED_PERCENT / MONTHS_IN_YEAR
+        : ((depositAmount * depositRate) / HUNDRED_PERCENT / MONTHS_IN_YEAR) * depositPeriod;
+    const totalResult = depositAmount + depositAmountPercent;
+
+    return totalResult;
 };
 
 const getDaysInMonths = () => {
@@ -37,31 +42,36 @@ const getDaysInMonths = () => {
 };
 
 export const calculateSummary = (inputData, adjunctData) => {
+    const calculationPeriod = Number(adjunctData.period);
+
     // Monthly income
-    const totalIncome = getTotalIncome(inputData);
+    const monthlyIncome = getMonthlyIncome(inputData);
 
     // Monthly expense
-    const totalAdjunctAmount = getDynamicAmount(adjunctData.dynamicInput.amount);
+    const monthlyExpense = getDynamicAmount(adjunctData.dynamicInput.amount);
 
-    // Daily budget for May
-    const dailyBudgetForMonth = (totalIncome - totalAdjunctAmount) / getDaysInMonths();
+    // Clear income
+    const clearIncome = monthlyIncome - monthlyExpense;
+
+    // Daily budget for Month
+    const dailyBudgetForMonth = clearIncome / getDaysInMonths();
 
     // Bank deposit
-    let bankDeposit;
+    let bankDeposit = 0;
+    let monthlyDeposit = 0;
     if (inputData.isDepositChecked) {
         bankDeposit = getBankDeposit(inputData, adjunctData);
+        monthlyDeposit = getBankDeposit(inputData, adjunctData, true);
     }
 
     // totalSavings for the period
-    const totalSavings = bankDeposit
-        ? (totalIncome - totalAdjunctAmount) * Number(adjunctData.period) +
-          bankDeposit +
-          Number(inputData['deposit-amount'])
-        : (totalIncome - totalAdjunctAmount) * Number(adjunctData.period) + Number(inputData['deposit-amount']);
+    const baseSavings = clearIncome * calculationPeriod;
+    const totalSavings = bankDeposit ? baseSavings + bankDeposit : baseSavings;
 
     // Months to reach the goal
     // Handle error
-    const goalReachingPeriod = Math.ceil(Number(adjunctData['target-input']) / totalSavings);
+    const savingsGoal = Number(adjunctData['target-input']);
+    const goalReachingPeriod = Math.ceil((savingsGoal - monthlyDeposit) / clearIncome);
 
     // Summary -- Income
     const summaryIncome = getDynamicName(inputData.dynamicInput.name);
@@ -70,8 +80,8 @@ export const calculateSummary = (inputData, adjunctData) => {
 
     return {
         total: {
-            income: totalIncome,
-            expense: totalAdjunctAmount,
+            income: monthlyIncome,
+            expense: monthlyExpense,
             dailyBudget: Math.floor(dailyBudgetForMonth),
             totalSavings: Math.floor(totalSavings),
             bankDeposit: Math.floor(bankDeposit),
