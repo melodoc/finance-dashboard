@@ -160,8 +160,8 @@
 
                         <li class="custom-range">
                             <div class="header__wrapper margin_small">
-                                <h3 class="header__title">Settlement period</h3>
-                                <span class="tooltip__wrapper" aria-label="Settlement period in months" tabindex="0">
+                                <h3 class="header__title">Period for calculation</h3>
+                                <span class="tooltip__wrapper" aria-label="Period in months" tabindex="0">
                                     <img class="tooltip__logo" alt="info" src="./img/info.svg" />
                                 </span>
                             </div>
@@ -172,11 +172,11 @@
                                     class="custom-range__input"
                                     type="range"
                                     step="1"
-                                    min="0"
+                                    min="1"
                                     max="12"
-                                    value="6"
+                                    value="12"
                                 />
-                                <div class="custom-range__title" id="period-amount">6</div>
+                                <div class="custom-range__title" id="period-amount">12</div>
                             </div>
                         </li>
                     </ul>
@@ -209,14 +209,13 @@
                         <label class="icon-paragraph__title" for="budget_day-result">Daily budget</label>
                         <input class="icon-paragraph__input" type="text" id="budget_day-result" value="0" readonly />
                     </li>
-
-                    <li class="icon-paragraph icon-savings">
-                        <label class="icon-paragraph__title">Total savings for the period</label>
-                        <input class="icon-paragraph__input" type="text" id="income_period-result" value="0" readonly />
-                    </li>
                     <li class="icon-paragraph icon-money">
                         <label class="icon-paragraph__title">Bank deposit</label>
                         <input class="icon-paragraph__input" type="text" id="bank-deposit-result" value="0" readonly />
+                    </li>
+                    <li class="icon-paragraph icon-savings">
+                        <label class="icon-paragraph__title">Total savings for the period</label>
+                        <input class="icon-paragraph__input" type="text" id="income_period-result" value="0" readonly />
                     </li>
                 </ul>
 
