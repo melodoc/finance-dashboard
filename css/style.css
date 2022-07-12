@@ -884,8 +884,8 @@
 
 @media screen and (max-width: 1439px) {
     .dashboard__form {
-        grid-template-columns: repeat(3, 345px);
-        grid-gap: 75px;
+        grid-template-columns: repeat(3, 375px);
+        grid-gap: 35px;
     }
 
     .dashboard__title {
