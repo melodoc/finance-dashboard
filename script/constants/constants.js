@@ -62,3 +62,4 @@ export const daysInMonths = {
 
 export const MONTHS_IN_YEAR = 12;
 export const HUNDRED_PERCENT = 100;
+export const INIT_NUMBER_OF_INPUTS = 3;

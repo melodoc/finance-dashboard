@@ -4,7 +4,7 @@ import { handleTitleContent } from './handleContent/handleTitleContent.js';
 import { handleBudgetDayLabelContent } from './handleContent/handleBudgetDayLabelContent.js';
 import { appendInput } from './handleInput/handleInput.js';
 import { enableValidation } from './validation/enableValidation.js';
-import { validationProps, userInputProps } from './constants/constants.js';
+import { validationProps, userInputProps, INIT_NUMBER_OF_INPUTS } from './constants/constants.js';
 import { setIncomeProps } from './handleInput/setInputProps.js';
 import {
     showTermDepositInput,
@@ -42,8 +42,13 @@ const mandatoryExpensesProps = setIncomeProps(
 
 handleTitleContent(dashboardTitle);
 
-appendInput(sideIncomeProps);
-appendInput(mandatoryExpensesProps);
+for (let input = 0; input < INIT_NUMBER_OF_INPUTS; input++) {
+    appendInput(sideIncomeProps);
+    appendInput(mandatoryExpensesProps);
+}
+
+termDepositCheckBox.setAttribute('checked',  true)
+showTermDepositInput();
 
 enableValidation(validationProps, userInputProps);
 
