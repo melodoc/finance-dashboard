@@ -8,7 +8,7 @@
 
 This is a service where you can calculate income and expenses and find out how long it will take you to accumulate the required amount.
 
-[Design](https://www.figma.com/file/yc3S3Gk7e4KHkSktUGrFSS/Finance-Dashboard----Edit?node-id=0%3A1)
+[Design](https://www.figma.com/file/TPer6YJzHYoVsYMiMTPsCt/Finance-Dashboard-(Copy)?node-id=0%3A1)
 
 ## Tech
 

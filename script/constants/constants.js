@@ -62,4 +62,9 @@ export const daysInMonths = {
 
 export const MONTHS_IN_YEAR = 12;
 export const HUNDRED_PERCENT = 100;
-export const INIT_NUMBER_OF_INPUTS = 3;
+
+export const SIDE_INCOME_NUMBER_OF_INPUTS = 1;
+export const NUMBER_OF_INPUTS = {
+    SIDE_INCOME: 1,
+    NUMBER_OF_INPUTS: 2
+}

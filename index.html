@@ -26,7 +26,7 @@
                 <h2 class="section__header">Income</h2>
                 <ul class="section__list">
                     <div class="header__wrapper">
-                        <h3 class="header__title header__logo income_logo">Regular income per month</h3>
+                        <h3 class="header__title">Regular income per month</h3>
                     </div>
                     <li class="input-large">
                         <span class="input-large__currency">$</span>
@@ -46,7 +46,7 @@
 
                     <li class="input-list">
                         <div class="header__wrapper">
-                            <h3 class="header__title header__logo exchange-logo">Side income</h3>
+                            <h3 class="header__title">Side income</h3>
                             <button class="header__button" type="button">+</button>
                         </div>
                         <!-- render input using to the template -->
@@ -92,9 +92,8 @@
                                     >Enter the amount</label
                                 >
                             </div>
-                            <div class="input__wrapper display_none">
+                            <div class="input__wrapper input__wrapper_type_double display_none">
                                 <label class="input__label input__label_size_small">
-                                    <img class="input__logo" alt="income" src="./img/income.svg" />
                                     <input
                                         id="custom-rate"
                                         class="input__input input__input_size_small"
@@ -106,9 +105,9 @@
                                     <span class="custom-rate-error"></span>
                                 </label>
                                 <label class="input__label input__label_size_small">
-                                    <img class="input__logo" alt="rate" src="./img/rate.svg" />
+                                    <img class="input__logo input__logo_type_inner" alt="rate" src="./img/rate.svg" />
                                     <input
-                                        class="input__input input__input_size_small"
+                                        class="input__input input__input_size_small input__input_type_inner"
                                         id="custom-deposit-percent"
                                         type="number"
                                         min="0"
@@ -130,7 +129,7 @@
                 <ul class="section__list">
                     <li class="input-list">
                         <div class="header__wrapper">
-                            <h3 class="header__title header__logo list_logo">Mandatory expenses</h3>
+                            <h3 class="header__title">Mandatory expenses</h3>
                             <button class="header__button" type="button">+</button>
                         </div>
                         <!-- render input using to the template -->
@@ -138,7 +137,9 @@
                 </ul>
 
                 <section class="savings-goal">
-                    <h2 class="section__header">The savings goal</h2>
+                    <div class="header__wrapper">
+                        <h2 class="header__title">The savings goal</h2>
+                    </div>
                     <ul class="section__list">
                         <li class="input-large">
                             <span class="input-large__currency">$</span>
@@ -174,9 +175,12 @@
                                     step="1"
                                     min="1"
                                     max="12"
-                                    value="12"
+                                    value="10"
                                 />
-                                <div class="custom-range__title" id="period-amount">12</div>
+                                <div class="custom-range__result-wrapper">
+                                    <span class="custom-range__title" id="period-amount">10</span>
+                                    <span>m.</span>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -188,12 +192,18 @@
                 </section>
             </section>
 
-            <section class="section" id="result">
+            <section class="section section__type_result" id="result">
                 <h2 class="section__header">Total</h2>
-                <ul class="section__list input-list">
+                <ul class="section__list total-list">
                     <li class="icon-paragraph icon-money">
                         <label class="icon-paragraph__title">Monthly income</label>
-                        <input class="icon-paragraph__input" type="text" id="budget_month-result" value="0" readonly />
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="budget_month-result"
+                            value="0.00"
+                            readonly
+                        />
                     </li>
                     <li class="icon-paragraph icon-expense">
                         <label class="icon-paragraph__title">Monthly expense</label>
@@ -201,31 +211,48 @@
                             class="icon-paragraph__input"
                             type="text"
                             id="expenses_month-result"
-                            value="0"
+                            value="0.00"
                             readonly
                         />
                     </li>
                     <li class="icon-paragraph icon-budget">
                         <label class="icon-paragraph__title" for="budget_day-result">Daily budget</label>
-                        <input class="icon-paragraph__input" type="text" id="budget_day-result" value="0" readonly />
-                    </li>
-                    <li class="icon-paragraph icon-money">
-                        <label class="icon-paragraph__title">Bank deposit</label>
-                        <input class="icon-paragraph__input" type="text" id="bank-deposit-result" value="0" readonly />
+                        <input class="icon-paragraph__input" type="text" id="budget_day-result" value="0.00" readonly />
                     </li>
                     <li class="icon-paragraph icon-savings">
                         <label class="icon-paragraph__title">Total savings for the period</label>
-                        <input class="icon-paragraph__input" type="text" id="income_period-result" value="0" readonly />
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="income_period-result"
+                            value="0.00"
+                            readonly
+                        />
+                    </li>
+                    <li class="icon-paragraph icon-deposit">
+                        <label class="icon-paragraph__title">Bank deposit</label>
+                        <input
+                            class="icon-paragraph__input"
+                            type="text"
+                            id="bank-deposit-result"
+                            value="0.00"
+                            readonly
+                        />
                     </li>
                 </ul>
 
-                <div class="input-result__wrapper">
+                <div class="input__wrapper input__wrapper_type_result">
                     <label class="input__label input__label_size_small">
-                        <input class="input-result__text" type="text" value="Months to reach the goal" readonly />
+                        <input
+                            class="input-result__text input__input input__input_size_small"
+                            type="text"
+                            value="Months to the goal"
+                            readonly
+                        />
                     </label>
                     <label class="input__label input__label_size_small">
                         <input
-                            class="input-result__text input-result_text-purple"
+                            class="input__input input__input_size_small input__input_type_result"
                             id="target_month-result"
                             type="number"
                             value="0"
@@ -234,14 +261,14 @@
                     </label>
                 </div>
 
-                <h2 class="section__header">Summary</h2>
+                <h2 class="section__header result__header">Summary</h2>
                 <div class="section__list">
                     <div class="result-additional_income">
-                        <h3 class="title">Income</h3>
+                        <h3 class="result__title">Income</h3>
                         <p class="result-total additional_income-value">All tne income names</p>
                     </div>
                     <div class="result-additional_expenses">
-                        <h3 class="title">Expenses</h3>
+                        <h3 class="result__title">Expenses</h3>
                         <p class="result-total additional_expenses-value">All the expenses names</p>
                     </div>
                 </div>
@@ -250,12 +277,11 @@
         <template id="side-income">
             <div class="input__wrapper">
                 <label class="input__label input__label_size_small">
-                    <img class="input__logo" alt="income" src="./img/income.svg" />
                     <input
                         class="input__input input__input_size_small"
                         id="income-name-input"
                         type="text"
-                        placeholder="Enter the name"
+                        placeholder="Name of side income"
                         inputmode="text"
                         required
                     />
@@ -270,7 +296,7 @@
                         min="0"
                         max="1000000000000"
                         inputmode="decimal"
-                        placeholder="Enter the amount"
+                        placeholder="Amount of side income"
                         required
                     />
                     <span class="income-amount-input-error"></span>
@@ -280,12 +306,11 @@
         <template id="mandatory-expenses">
             <div class="input__wrapper">
                 <label class="input__label input__label_size_small">
-                    <img class="input__logo" alt="expenses" src="./img/expenses.svg" />
                     <input
                         class="input__input input__input_size_small"
                         id="expenses-name"
                         type="text"
-                        placeholder="Enter the name"
+                        placeholder="Name of mandatory expenses"
                         inputmode="text"
                         required
                     />
@@ -300,7 +325,7 @@
                         min="0"
                         max="1000000000000"
                         inputmode="decimal"
-                        placeholder="Enter the amount"
+                        placeholder="Amount of mandatory expenses"
                         required
                     />
                     <span class="expenses-amount-error"></span>
