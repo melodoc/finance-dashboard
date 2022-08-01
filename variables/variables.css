@@ -1,41 +1,53 @@
 :root {
-    /* colors */
-    --primary: #f2f2fD;
-    --background-color: #f8fafb;
-    --cobalt-blue: #151149;
-    --input-color: #A1A0B6;
-    --button-purple: #E3E5F5;
-    --button-purple-highlight: #596fff;
-    --button-purple-outline: #bbc4ff;
-    /* ---------old */
-    --black: #000000;
-    --white: #ffffff;
-    --smoky-white: #f3f2f2;
-    --gray: #545454;
-    --ghost-light: #f4f3f6;
-    --ghost-dark: #f7f6f8;
-    --ghost-white: #f2eeff;
-    --silver: #5a687b;
-    --purple: #623ce7;
-    --light-purple: #613ce79e;
-    --dark-purple: #492ea8;
-    --purplish-light: #c0bccea4;
-    --pale-purplish: #9e82ffa4;
-    --focus-opacity: 0.3;
-    --hover-opacity: 0.7;
-    --error: #ff4267;
-    /* shadow */
-    --box-shadow: 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
-    /* element offsets */
-    --icon-offset: 10px;
-    --input-offset: 20px;
-    /* global offsets */
-    --offset-s: 11px;
-    --offset-l: 31px;
-    /* sizes */
-    --logo-width: 36px;
-    --logo-height: 12px;
-    /* global offsets */
-    --button-align: -6px;
-    --offset-l: 31px;
+  /* colors base*/
+  --primary: #f2f2fd;
+  --background-color: #f8fafb;
+  --cobalt-blue: #151149;
+  --input-color: #a1a0b6;
+  --button-purple: #e3e5f5;
+  --button-purple-highlight: #596fff;
+  --button-purple-outline: #bbc4ff;
+
+  /* colors extra */
+  --black: #000;
+  --white: #fff;
+  --smoky-white: #f3f2f2;
+  --gray: #545454;
+  --ghost-dark: #f7f6f8;
+  --ghost-white: #f2eeff;
+  --silver: #5a687b;
+  --purple: #623ce7;
+  --light-purple: #613ce79e;
+  --dark-purple: #492ea8;
+  --purplish-light: #c0bccea4;
+  --focus-opacity: 0.3;
+  --hover-opacity: 0.7;
+  --error: #ff4267;
+
+  /* shadow */
+  --box-shadow: 0 38.5185px 25.4815px rgb(0 0 0 / 1.82%);
+
+  /* element offsets */
+  --icon-offset: 10px;
+  --input-offset: 20px;
+  --offset-s: 11px;
+  --offset-l: 30px;
+  --offset-xl: 45px;
+  --button-align: -6px;
+
+  /* sizes */
+  --hover-logo-size: 36px;
+  --input-logo-size: 17px;
+  --custom-range-size: 20px;
+
+  /* fonts */
+  --base-font-size: 14px;
+  --body1-font-size: calc(var(--base-font-size) + 2px); 
+  --body2-font-size: calc(var(--base-font-size) - 2px);
+  --caption-font-size: calc(var(--base-font-size) - 1px); 
+  --icon-font-size: calc(var(--base-font-size) + 4px); 
+  --input-font-size: calc(var(--base-font-size) + 7px);
+  --input-large-font-size: calc(var(--input-font-size) + 5px);
+  --header-font-size: 27px;
+  --h1-font-size: 45px;
 }

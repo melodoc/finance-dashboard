@@ -1,48 +1,58 @@
 @font-face {
-    font-family: 'TT Firs Neue';
-    font-style: normal;
-    font-weight: bold;
-    font-display: swap;
-    src: local('TT Firs Neue Bold'), local('TTFirsNeue-Bold'),
-        url('./tt-firs-neue/TTFirsNeue-Bold.woff') format('woff2'),
-        url('./tt-firs-neue/TTFirsNeue-Bold.woff') format('woff');
+  font-family: "TT Firs Neue";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src:
+    local("TT Firs Neue Bold"),
+    local("TTFirsNeue-Bold"),
+    url("./tt-firs-neue/TTFirsNeue-Bold.woff") format("woff2"),
+    url("./tt-firs-neue/TTFirsNeue-Bold.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'TT Firs Neue';
-    font-style: italic;
-    font-weight: bold;
-    font-display: swap;
-    src: local('TT Firs Neue Bold Italic'), local('TTFirsNeue-BoldItalic'),
-        url('TTFirsNeue-BoldItalic.woff2') format('woff2'),
-        url('TTFirsNeue-BoldItalic.woff') format('woff');
+  font-family: "TT Firs Neue";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src:
+    local("TT Firs Neue Bold Italic"),
+    local("TTFirsNeue-BoldItalic"),
+    url("TTFirsNeue-BoldItalic.woff2") format("woff2"),
+    url("TTFirsNeue-BoldItalic.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'TT Firs Neue';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: local('TT Firs Neue DemiBold'), local('TTFirsNeue-DemiBold'),
-        url('TTFirsNeue-DemiBold.woff2') format('woff2'),
-        url('TTFirsNeue-DemiBold.woff') format('woff');
+  font-family: "TT Firs Neue";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("TT Firs Neue DemiBold"),
+    local("TTFirsNeue-DemiBold"),
+    url("TTFirsNeue-DemiBold.woff2") format("woff2"),
+    url("TTFirsNeue-DemiBold.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'TT Firs Neue';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: local('TT Firs Neue Medium'), local('TTFirsNeue-Medium'),
-        url('TTFirsNeue-Medium.woff2') format('woff2'),
-        url('TTFirsNeue-Medium.woff') format('woff');
+  font-family: "TT Firs Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    local("TT Firs Neue Medium"),
+    local("TTFirsNeue-Medium"),
+    url("TTFirsNeue-Medium.woff2") format("woff2"),
+    url("TTFirsNeue-Medium.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'TT Firs Neue';
-    font-style: normal;
-    font-weight: normal;
-    src: local('TT Firs Neue Regular'), local('TTFirsNeue-Regular'),
-        url('TTFirsNeue-Regular.woff2') format('woff2'),
-        url('TTFirsNeue-Regular.woff') format('woff');
+  font-family: "TT Firs Neue";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("TT Firs Neue Regular"),
+    local("TTFirsNeue-Regular"),
+    url("TTFirsNeue-Regular.woff2") format("woff2"),
+    url("TTFirsNeue-Regular.woff") format("woff");
 }
