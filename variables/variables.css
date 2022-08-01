@@ -1,5 +1,13 @@
 :root {
     /* colors */
+    --primary: #f2f2fD;
+    --background-color: #f8fafb;
+    --cobalt-blue: #151149;
+    --input-color: #A1A0B6;
+    --button-purple: #E3E5F5;
+    --button-purple-highlight: #596fff;
+    --button-purple-outline: #bbc4ff;
+    /* ---------old */
     --black: #000000;
     --white: #ffffff;
     --smoky-white: #f3f2f2;
@@ -8,7 +16,6 @@
     --ghost-dark: #f7f6f8;
     --ghost-white: #f2eeff;
     --silver: #5a687b;
-    --cobalt-blue: #1c1f3e;
     --purple: #623ce7;
     --light-purple: #613ce79e;
     --dark-purple: #492ea8;
@@ -16,18 +23,19 @@
     --pale-purplish: #9e82ffa4;
     --focus-opacity: 0.3;
     --hover-opacity: 0.7;
-    --light-mint: #e2f1f1;
-    --bright-mint: #7ecece;
     --error: #ff4267;
     /* shadow */
     --box-shadow: 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
     /* element offsets */
     --icon-offset: 10px;
-    --input-offset: 23px;
+    --input-offset: 20px;
     /* global offsets */
-    --offset-s: 17px;
-    --offset-l: 37px;
+    --offset-s: 11px;
+    --offset-l: 31px;
     /* sizes */
-    --logo-width: 15px;
+    --logo-width: 36px;
     --logo-height: 12px;
+    /* global offsets */
+    --button-align: -6px;
+    --offset-l: 31px;
 }

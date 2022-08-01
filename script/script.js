@@ -4,7 +4,7 @@ import { handleTitleContent } from './handleContent/handleTitleContent.js';
 import { handleBudgetDayLabelContent } from './handleContent/handleBudgetDayLabelContent.js';
 import { appendInput } from './handleInput/handleInput.js';
 import { enableValidation } from './validation/enableValidation.js';
-import { validationProps, userInputProps, INIT_NUMBER_OF_INPUTS } from './constants/constants.js';
+import { validationProps, userInputProps, NUMBER_OF_INPUTS } from './constants/constants.js';
 import { setIncomeProps } from './handleInput/setInputProps.js';
 import {
     showTermDepositInput,
@@ -42,8 +42,11 @@ const mandatoryExpensesProps = setIncomeProps(
 
 handleTitleContent(dashboardTitle);
 
-for (let input = 0; input < INIT_NUMBER_OF_INPUTS; input++) {
+for (let input = 0; input < NUMBER_OF_INPUTS.SIDE_INCOME; input++) {
     appendInput(sideIncomeProps);
+}
+
+for (let input = 0; input < NUMBER_OF_INPUTS.NUMBER_OF_INPUTS; input++) {
     appendInput(mandatoryExpensesProps);
 }
 

@@ -1,19 +1,12 @@
 import { daysInMonthsLeap, daysInMonths, MONTHS_IN_YEAR, HUNDRED_PERCENT } from '../constants/constants.js';
+import { getCalculatedSum } from '../utils/getCalculatedSum.js';
 
-const getDynamicAmount = (amountList) => {
-    return amountList.reduce((prevAmount, currentAmount) => Number(prevAmount) + Number(currentAmount), 0);
-};
-
-const getDynamicName = (nameList) => {
-    return nameList.join(', ');
-};
-
-const getSalary = (inputData) => {
-    return Number(inputData['salary-input']);
+const convertListToString = (list) => {
+    return list.join(', ');
 };
 
 const getMonthlyIncome = (inputData) => {
-    return getDynamicAmount(inputData.dynamicInput.amount) + getSalary(inputData);
+    return getCalculatedSum(inputData.dynamicInput.amount) + Number(inputData['salary-input']);
 };
 
 const getBankDeposit = (inputData, adjunctData, isMonthly) => {
@@ -48,7 +41,7 @@ export const calculateSummary = (inputData, adjunctData) => {
     const monthlyIncome = getMonthlyIncome(inputData);
 
     // Monthly expense
-    const monthlyExpense = getDynamicAmount(adjunctData.dynamicInput.amount);
+    const monthlyExpense = getCalculatedSum(adjunctData.dynamicInput.amount);
 
     // Clear income
     const clearIncome = monthlyIncome - monthlyExpense;
@@ -74,9 +67,9 @@ export const calculateSummary = (inputData, adjunctData) => {
     const goalReachingPeriod = Math.ceil((savingsGoal - monthlyDeposit) / clearIncome);
 
     // Summary -- Income
-    const summaryIncome = getDynamicName(inputData.dynamicInput.name);
+    const summaryIncome = convertListToString(inputData.dynamicInput.name);
     // Summary -- Expenses
-    const summaryExpenses = getDynamicName(adjunctData.dynamicInput.name);
+    const summaryExpenses = convertListToString(adjunctData.dynamicInput.name);
 
     return {
         total: {
