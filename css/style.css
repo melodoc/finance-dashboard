@@ -1035,4 +1035,8 @@
   .result-additional_expenses {
     display: block;
   }
+
+  .display_none {
+    display: none;
+  }
 }
