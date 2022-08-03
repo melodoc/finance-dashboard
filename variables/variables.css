@@ -1,5 +1,5 @@
 :root {
-  /* colors base*/
+  /* colors base */
   --primary: #f2f2fd;
   --background-color: #f8fafb;
   --cobalt-blue: #151149;
@@ -37,15 +37,17 @@
 
   /* sizes */
   --hover-logo-size: 36px;
+  --hover-logo-small: 25px;
   --input-logo-size: 17px;
   --custom-range-size: 20px;
 
   /* fonts */
   --base-font-size: 14px;
-  --body1-font-size: calc(var(--base-font-size) + 2px); 
+  --small-font-size: 9px;
+  --body1-font-size: calc(var(--base-font-size) + 2px);
   --body2-font-size: calc(var(--base-font-size) - 2px);
-  --caption-font-size: calc(var(--base-font-size) - 1px); 
-  --icon-font-size: calc(var(--base-font-size) + 4px); 
+  --caption-font-size: calc(var(--base-font-size) - 1px);
+  --icon-font-size: calc(var(--base-font-size) + 4px);
   --input-font-size: calc(var(--base-font-size) + 7px);
   --input-large-font-size: calc(var(--input-font-size) + 5px);
   --header-font-size: 27px;
