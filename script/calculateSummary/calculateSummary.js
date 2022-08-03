@@ -64,7 +64,7 @@ export const calculateSummary = (inputData, adjunctData) => {
     // Months to reach the goal
     // Handle error
     const savingsGoal = Number(adjunctData['target-input']);
-    const goalReachingPeriod = Math.ceil((savingsGoal - monthlyDeposit) / clearIncome);
+    const goalReachingPeriod = clearIncome? Math.ceil((savingsGoal - monthlyDeposit) / clearIncome) : 'N/A';
 
     // Summary -- Income
     const summaryIncome = convertListToString(inputData.dynamicInput.name);

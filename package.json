@@ -1,0 +1,31 @@
+{
+  "name": "finance-dashboard",
+  "version": "1.0.0",
+  "description": "## Link",
+  "main": "script.js",
+  "scripts": {
+    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melodoc/finance-dashboard.git"
+  },
+  "author": "melodoc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melodoc/finance-dashboard/issues"
+  },
+  "homepage": "https://github.com/melodoc/finance-dashboard#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "postcss-discard-duplicates": "^5.1.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-order": "^5.0.0"
+  }
+}
