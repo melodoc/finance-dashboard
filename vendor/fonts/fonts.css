@@ -18,8 +18,8 @@
   src:
     local("TT Firs Neue Bold Italic"),
     local("TTFirsNeue-BoldItalic"),
-    url("TTFirsNeue-BoldItalic.woff2") format("woff2"),
-    url("TTFirsNeue-BoldItalic.woff") format("woff");
+    url("./tt-firs-neue/TTFirsNeue-BoldItalic.woff2") format("woff2"),
+    url("./tt-firs-neue/TTFirsNeue-BoldItalic.woff") format("woff");
 }
 
 @font-face {
@@ -30,8 +30,8 @@
   src:
     local("TT Firs Neue DemiBold"),
     local("TTFirsNeue-DemiBold"),
-    url("TTFirsNeue-DemiBold.woff2") format("woff2"),
-    url("TTFirsNeue-DemiBold.woff") format("woff");
+    url("./tt-firs-neue/TTFirsNeue-DemiBold.woff2") format("woff2"),
+    url("./tt-firs-neue/TTFirsNeue-DemiBold.woff") format("woff");
 }
 
 @font-face {
@@ -42,8 +42,8 @@
   src:
     local("TT Firs Neue Medium"),
     local("TTFirsNeue-Medium"),
-    url("TTFirsNeue-Medium.woff2") format("woff2"),
-    url("TTFirsNeue-Medium.woff") format("woff");
+    url("./tt-firs-neue/TTFirsNeue-Medium.woff2") format("woff2"),
+    url("./tt-firs-neue/TTFirsNeue-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -53,6 +53,6 @@
   src:
     local("TT Firs Neue Regular"),
     local("TTFirsNeue-Regular"),
-    url("TTFirsNeue-Regular.woff2") format("woff2"),
-    url("TTFirsNeue-Regular.woff") format("woff");
+    url("./tt-firs-neue/TTFirsNeue-Regular.woff2") format("woff2"),
+    url("./tt-firs-neue/TTFirsNeue-Regular.woff") format("woff");
 }

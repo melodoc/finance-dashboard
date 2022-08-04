@@ -4,6 +4,10 @@ export const validationProps = {
     submit: '.control__button[type=submit]'
 };
 
+export const controlHandleClassName = {
+    inactive: 'control__element_inactive'
+}
+
 export const userInputProps = {
     income: {
         sectionSelector: '#income-data',
