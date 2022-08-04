@@ -33,12 +33,17 @@ const goalAchievementPeriodTitle = document.querySelector('.custom-range__title'
 
 const budgetDayResultLabel = document.querySelector('[for="budget_day-result"]');
 
-const sideIncomeProps = setIncomeProps(sideIncomeTemplate, sideIncomeContainer, addSideIncomeButton);
-const mandatoryExpensesProps = setIncomeProps(
-    mandatoryExpensesTemplate,
-    mandatoryExpensesContainer,
-    addMandatoryExpensesButton
-);
+const sideIncomeProps = setIncomeProps({
+    template: sideIncomeTemplate,
+    container: sideIncomeContainer,
+    button: addSideIncomeButton
+});
+
+const mandatoryExpensesProps = setIncomeProps({
+    template: mandatoryExpensesTemplate,
+    container: mandatoryExpensesContainer,
+    button: addMandatoryExpensesButton
+});
 
 handleTitleContent(dashboardTitle);
 
@@ -50,7 +55,7 @@ for (let input = 0; input < NUMBER_OF_INPUTS.NUMBER_OF_INPUTS; input++) {
     appendInput(mandatoryExpensesProps);
 }
 
-termDepositCheckBox.setAttribute('checked',  true)
+termDepositCheckBox.setAttribute('checked', true);
 showTermDepositInput();
 
 enableValidation(validationProps, userInputProps);
