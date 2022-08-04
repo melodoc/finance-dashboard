@@ -1,19 +1,17 @@
-export const setIncomeProps = (template, container, button) => {
+import { incomeProps } from '../constants/constants.js';
+
+const INPUT_NUMBER_LIMITS = 10;
+
+export const setIncomeProps = ({template, container, button}) => {
     return {
         elements: {
             template,
             container,
             button
         },
-        selectors: {
-            form: '.dashboard__form',
-            wrapper: '.input__wrapper',
-            input: '.input__input',
-            error: 'span',
-            submit: '.control__button[type=submit]'
-        },
+        selectors: incomeProps,
         params: {
-            inputNumberLimit: 10
+            inputNumberLimit: INPUT_NUMBER_LIMITS
         }
     };
 };

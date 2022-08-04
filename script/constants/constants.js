@@ -4,6 +4,14 @@ export const validationProps = {
     submit: '.control__button[type=submit]'
 };
 
+export const incomeProps = {
+    form: '.dashboard__form',
+    wrapper: '.input__wrapper',
+    input: '.input__input',
+    error: 'span',
+    submit: '.control__button[type=submit]'
+};
+
 export const controlHandleClassNames = {
     inactive: 'control__element_inactive',
     hidden : 'display_none',

@@ -212,7 +212,7 @@
   position: absolute;
   top: 18px;
   left: var(--input-offset);
-  font-size: var(--body2-font-size);
+  font-size: var(--caption-font-size);
   transition: top 0.1s ease-out;
 }
 
@@ -230,7 +230,7 @@
   position: absolute;
   top: 18px;
   left: var(--input-offset);
-  font-size: var(--body2-font-size);
+  font-size: var(--caption-font-size);
 }
 
 .input__label_size_large:hover {
@@ -882,8 +882,8 @@
   }
 
   .input__input_size_large:focus ~ .input__label_size_large {
-    top: 11px;
-    font-size: var(--small-font-size);
+    top: 9px;
+    font-size: var(--caption-font-size);
   }
 
   .custom-range {
@@ -932,6 +932,13 @@
   .icon-paragraph::before {
     width: 44px;
     height: 44px;
+  }
+
+  .input__input_size_large:not(:focus, :placeholder-shown) ~ .input__label_size_large {
+    position: absolute;
+    top: 9px;
+    left: var(--input-offset);
+    font-size: var(--caption-font-size);
   }
 }
 
@@ -1038,5 +1045,9 @@
 
   .display_none {
     display: none;
+  }
+
+  .input__input_size_large:not(:focus, :placeholder-shown) ~ .input__label_size_large {
+    font-size: var(--caption-font-size);
   }
 }
