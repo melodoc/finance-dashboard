@@ -1,3 +1,5 @@
+import { controlHandleClassNames, controlHandleAttributes } from '../constants/constants.js';
+
 const depositContainer = document.querySelector('.deposit');
 const customSelectWrapper = depositContainer.querySelector('.custom-select__wrapper');
 const amountInputContainer = depositContainer.querySelector('.input-large');
@@ -10,17 +12,17 @@ const customRatePercentInput = customRateWrapper.querySelector('#custom-rate');
 
 const setElementVisible = (element) => {
     if (Array.isArray(element)) {
-        element.forEach((e) => e.classList.remove('display_none'));
+        element.forEach((e) => e.classList.remove(controlHandleClassNames.hidden));
     } else {
-        element.classList.remove('display_none');
+        element.classList.remove(controlHandleClassNames.hidden);
     }
 };
 
 const setElementInvisible = (element) => {
     if (Array.isArray(element)) {
-        element.forEach((e) => e.classList.add('display_none'));
+        element.forEach((e) => e.classList.add(controlHandleClassNames.hidden));
     } else {
-        element.classList.add('display_none');
+        element.classList.add(controlHandleClassNames.hidden);
     }
 };
 
@@ -34,17 +36,17 @@ export const hideTermDepositInput = () => {
 
 const showCustomRateInput = () => {
     setElementVisible(customRateWrapper);
-    customRateNameInput.removeAttribute('disabled');
+    customRateNameInput.removeAttribute(controlHandleAttributes.disabled);
 };
 
 const setRequiredAttributes = () => {
-    customRateNameInput.setAttribute('required', '');
-    customRatePercentInput.setAttribute('required', '');
+    customRateNameInput.setAttribute(controlHandleAttributes.required, '');
+    customRatePercentInput.setAttribute(controlHandleAttributes.required, '');
 };
 
 export const removeRequiredAttributes = () => {
-    customRateNameInput.removeAttribute('required');
-    customRatePercentInput.removeAttribute('required');
+    customRateNameInput.removeAttribute(controlHandleAttributes.required);
+    customRatePercentInput.removeAttribute(controlHandleAttributes.required);
 };
 
 export const handleAdditionalSelect = () => {
@@ -58,9 +60,9 @@ export const handleAdditionalSelect = () => {
 };
 
 export const setTermDepositInputRequired = () => {
-    amountInput.setAttribute('required', '');
+    amountInput.setAttribute(controlHandleAttributes.required, '');
 };
 
 export const removeTermDepositInputRequired = () => {
-    amountInput.removeAttribute('required');
+    amountInput.removeAttribute(controlHandleAttributes.required);
 };

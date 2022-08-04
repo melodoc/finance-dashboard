@@ -4,8 +4,14 @@ export const validationProps = {
     submit: '.control__button[type=submit]'
 };
 
-export const controlHandleClassName = {
-    inactive: 'control__element_inactive'
+export const controlHandleClassNames = {
+    inactive: 'control__element_inactive',
+    hidden : 'display_none',
+}
+
+export const controlHandleAttributes = {
+    disabled: 'disabled',
+    required: 'required'
 }
 
 export const userInputProps = {
