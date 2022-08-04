@@ -1,6 +1,6 @@
-import { controlHandleClassName } from '../constants/constants.js';
+import { controlHandleClassNames } from '../constants/constants.js';
 
 export const enableElement = (element) => {
-    element.classList.remove(controlHandleClassName.inactive);
+    element.classList.remove(controlHandleClassNames.inactive);
     element.disabled = false;
 };
