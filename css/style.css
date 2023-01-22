@@ -735,6 +735,7 @@
 .result-additional_expenses {
   display: flex;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .result__title {
