@@ -1,7 +1,7 @@
 import { disableElement } from '../elementStateHandle/disableElement.js';
 import { enableElement } from '../elementStateHandle/enableElement.js';
 import { getUserInputValues } from '../handleInput/getUserInputValues.js';
-import { calculateSummary } from '../calculateSummary/calculateSummary.js';
+import { SummaryCalculator } from '../SummaryCalculator/SummaryCalculator.js';
 import { handleResultSection } from '../handleContent/handleResultSection.js';
 
 const showInputError = (formElement, inputElement) => {
@@ -63,7 +63,7 @@ export const enableValidation = (validationProps, userInputProps) => {
             const inputData = getUserInputValues(formElement, userInputProps.income);
             const adjunctData = getUserInputValues(formElement, userInputProps.adjunct);
 
-            const result = calculateSummary(inputData, adjunctData);
+            const result = SummaryCalculator.calculate(inputData, adjunctData);
             handleResultSection(result);
         });
 
