@@ -17,6 +17,8 @@ const createInput = ({ template, selectors }) => {
         errorElements[index].className = `${inputElement.id}${uid}-error`;
         inputElement.id = `${inputElement.id}${uid}`;
         inputElement.name = `${inputElement.id}${uid}`;
+        // TODO: Delete when end with refactoring
+        inputElement.value = '44'
     });
 
     return inputWrapper;
