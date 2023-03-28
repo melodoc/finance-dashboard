@@ -1,0 +1,38 @@
+.glow {
+    position: relative;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+.glow:hover::before {
+    position: absolute;
+    top: 800%;
+    left: 0%;
+    z-index: -1;
+    display: block;
+    width: 200%;
+    height: 100vw;
+    content: "";
+    background: linear-gradient(-90deg, var(--dark-purple), var(--purple), var(--dark-purple), var(--dark-purple));
+    animation: glow 2s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        transform: rotate(-90deg) translate(100%);
+    }
+
+    100% {
+        transform: rotate(-90deg) translate(200%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .glow:hover::before {
+        width: 100%;
+        height: 100vw;
+    }
+}

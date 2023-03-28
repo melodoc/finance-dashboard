@@ -25,25 +25,27 @@
             <section class="section" id="income-data">
                 <h2 class="section__header">Income</h2>
                 <ul class="section__list">
-                    <div class="header__wrapper">
-                        <h3 class="header__title">Regular income per month</h3>
-                    </div>
                     <li class="input-large">
-                        <span class="input-large__currency">$</span>
-                                                         <!-- TODO: Delete value!!! -->
-                        <input
-                        value="800"
-                            class="input__input input__input_size_large"
-                            id="salary-input"
-                            type="number"
-                            min="0"
-                            max="1000000000000"
-                            placeholder="800.00"
-                            inputmode="decimal"
-                            required
-                        />
-                        <span class="salary-input-error"></span>
-                        <label class="input__label input__label_size_large" for="salary-input">Enter the amount</label>
+                        <div class="header__wrapper">
+                            <h3 class="header__title">Regular income per month</h3>
+                        </div>
+                        <div class="input-large__wrapper">
+                            <span class="input-large__currency">$</span>
+                            <input
+                                class="input__input input__input_size_large"
+                                id="salary-input"
+                                type="number"
+                                min="0"
+                                max="1000000000000"
+                                placeholder="800.00"
+                                inputmode="decimal"
+                                required
+                            />
+                            <span class="salary-input-error"></span>
+                            <label class="input__label input__label_size_large" for="salary-input"
+                                >Enter the amount</label
+                            >
+                        </div>
                     </li>
 
                     <li class="input-list">
@@ -68,7 +70,7 @@
                             </label>
                         </div>
                         <div class="custom-select__wrapper display_none">
-                            <img class="custom-select__icon" src="./img/mastercard.svg" />
+                            <img class="custom-select__icon" src="./img/mastercard.svg" alt="mastercard" />
                             <p class="custom-select__label">Bank account</p>
                             <select class="custom-select" id="deposit-bank">
                                 <option class="custom-select__option" value="3">CitiBank</option>
@@ -80,9 +82,7 @@
                         <div class="deposit-dashboard">
                             <div class="input-large margin_small display_none">
                                 <span class="input-large__currency">$</span>
-                                 <!-- TODO: Delete value!!! -->
                                 <input
-                                    value="800"
                                     class="input__input input__input_size_large"
                                     id="deposit-amount"
                                     type="number"
@@ -141,16 +141,14 @@
                 </ul>
 
                 <section class="savings-goal">
-                    <div class="header__wrapper">
-                        <h2 class="header__title">The savings goal</h2>
-                    </div>
                     <ul class="section__list">
+                        <div class="header__wrapper">
+                            <h2 class="header__title">The savings goal</h2>
+                        </div>
                         <li class="input-large">
                             <span class="input-large__currency">$</span>
-                             <!-- TODO: Delete value!!! -->
                             <input
-                            value="800"
-                            class="input__input input__input_size_large"
+                                class="input__input input__input_size_large"
                                 id="target-input"
                                 type="number"
                                 min="0"
@@ -192,8 +190,8 @@
                     </ul>
 
                     <div class="control">
-                        <button class="control__button" type="submit" id="start">Calculate</button>
-                        <button class="control__button display_none" type="reset" id="cancel">Reset</button>
+                        <button class="control__button glow" type="submit" id="start">Calculate</button>
+                        <button class="control__button display_none glow" type="reset" id="cancel">Reset</button>
                     </div>
                 </section>
             </section>
@@ -284,20 +282,20 @@
             <div class="input__wrapper">
                 <label class="input__label input__label_size_small">
                     <input
-                        class="input__input input__input_size_small"
-                        id="income-name-input"
+                        class="income-name input__input input__input_size_small"
+                        id="income-name"
                         type="text"
                         placeholder="Name of side income"
                         inputmode="text"
                         required
                     />
-                    <span class="income-name-input-error"></span>
+                    <span class="income-name-error"></span>
                 </label>
                 <label class="input__label input__label_size_small">
                     <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
                     <input
-                        class="input__input input__input_size_small"
-                        id="income-amount-input"
+                        class="income-amount input__input input__input_size_small"
+                        id="income-amount"
                         type="number"
                         min="0"
                         max="1000000000000"
@@ -305,7 +303,7 @@
                         placeholder="Amount of side income"
                         required
                     />
-                    <span class="income-amount-input-error"></span>
+                    <span class="income-amount-error"></span>
                 </label>
             </div>
         </template>
@@ -313,7 +311,7 @@
             <div class="input__wrapper">
                 <label class="input__label input__label_size_small">
                     <input
-                        class="input__input input__input_size_small"
+                        class="expenses-name input__input input__input_size_small"
                         id="expenses-name"
                         type="text"
                         placeholder="Name of mandatory expenses"
@@ -325,7 +323,7 @@
                 <label class="input__label input__label_size_small">
                     <img class="input__logo" alt="dollar" src="./img/dollar.svg" />
                     <input
-                        class="input__input input__input_size_small"
+                        class="expenses-amount input__input input__input_size_small"
                         id="expenses-amount"
                         type="number"
                         min="0"

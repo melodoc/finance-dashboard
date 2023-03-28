@@ -4,6 +4,7 @@
         "stylelint-order"
     ],
     "rules": {
+        "selector-class-pattern": "^([A-Za-z]+([_-][A-Za-z]+)*(__)?)+(--[A-Za-z]+([_-][A-Za-z]+)*)?$",
         "order/order": [
             "custom-properties",
             "declarations"
