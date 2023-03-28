@@ -1,12 +1,5 @@
-import { month } from '../constants/constants.js';
-
-const getCurrentMonth = () => {
-    const today = new Date();
-    return month[today.getMonth() + 1];
-};
+import { DateHelper } from '../utils/DateHelper.js';
 
 export const handleBudgetDayLabelContent = (element) => {
-    const currentMonth = getCurrentMonth();
-
-    element.textContent = `${element.textContent} for ${currentMonth}`;
+    element.textContent = `${element.textContent} for ${DateHelper.getCurrentMonth()}`;
 };

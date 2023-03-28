@@ -1,7 +1,7 @@
 import { disableElement } from '../elementStateHandle/disableElement.js';
 import { enableElement } from '../elementStateHandle/enableElement.js';
 import { getUserInputValues } from '../handleInput/getUserInputValues.js';
-import { SummaryCalculator } from '../SummaryCalculator/SummaryCalculator.js';
+import { Summary } from '../calculators/Summary.js';
 import { handleResultSection } from '../handleContent/handleResultSection.js';
 
 const showInputError = (formElement, inputElement) => {
@@ -55,6 +55,7 @@ const setEventListeners = (formElement, validationProps) => {
 };
 
 export const enableValidation = (validationProps, userInputProps) => {
+    // TODO: Одна форма, убрать проход по всем
     const formList = Array.from(document.querySelectorAll(validationProps.form));
 
     formList.forEach((formElement) => {
@@ -62,8 +63,10 @@ export const enableValidation = (validationProps, userInputProps) => {
             evt.preventDefault();
             const inputData = getUserInputValues(formElement, userInputProps.income);
             const adjunctData = getUserInputValues(formElement, userInputProps.adjunct);
+            
+            const summaryCalculator = new Summary(inputData, adjunctData);
+            const result = summaryCalculator.calculate();
 
-            const result = SummaryCalculator.calculate(inputData, adjunctData);
             handleResultSection(result);
         });
 

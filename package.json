@@ -4,7 +4,7 @@
   "description": "## Link",
   "main": "script.js",
   "scripts": {
-    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\"",
+    "start": "browser-sync start --server --no-ui --files --watch \"js/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx stylelint \"**/*.css\" --fix "
   },

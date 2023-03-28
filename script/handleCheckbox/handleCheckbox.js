@@ -1,4 +1,4 @@
-import { controlHandleClassNames, controlHandleAttributes } from '../constants/constants.js';
+import { controlHandleClassNames, controlHandleAttributes, DEPOSIT_RATES } from '../constants/constants.js';
 
 const depositContainer = document.querySelector('.deposit');
 const customSelectWrapper = depositContainer.querySelector('.custom-select__wrapper');
@@ -50,7 +50,7 @@ export const removeRequiredAttributes = () => {
 };
 
 export const handleAdditionalSelect = () => {
-    if (depositBankSelect.value === 'other') {
+    if (depositBankSelect.value === DEPOSIT_RATES.Other) {
         showCustomRateInput();
         setRequiredAttributes();
     } else {

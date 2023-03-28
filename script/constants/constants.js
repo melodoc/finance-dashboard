@@ -14,19 +14,39 @@ export const incomeProps = {
 
 export const controlHandleClassNames = {
     inactive: 'control__element_inactive',
-    hidden : 'display_none',
-}
+    hidden: 'display_none'
+};
 
 export const controlHandleAttributes = {
     disabled: 'disabled',
     required: 'required'
+};
+
+export const USER_INCOME_INPUT_IDS = {
+    SalaryInput: 'salary-input',
+    DepositAmount: 'deposit-amount',
+    CustomRate: 'custom-rate',
+    CustomDepositPercent: 'custom-deposit-percent'
+};
+
+export const USER_ADJUNCT_INPUT_IDS = {
+    TargetInput: 'target-input',
+};
+
+export const DEPOSIT_RATES = {
+    Other: 'other',
 }
 
 export const userInputProps = {
     income: {
         sectionSelector: '#income-data',
         inputSelector: '.input__input',
-        inputIds: ['salary-input', 'deposit-amount', 'custom-rate', 'custom-deposit-percent'],
+        inputIds: [
+            USER_INCOME_INPUT_IDS.SalaryInput,
+            USER_INCOME_INPUT_IDS.DepositAmount,
+            USER_INCOME_INPUT_IDS.CustomRate,
+            USER_INCOME_INPUT_IDS.CustomDepositPercent
+        ],
         dynamicInputIds: ['income-name-input', 'income-amount-input'],
         rangeSelector: undefined,
         customSelect: '#deposit-bank',
@@ -35,7 +55,7 @@ export const userInputProps = {
     adjunct: {
         sectionSelector: '#adjunct-data',
         inputSelector: '.input__input',
-        inputIds: ['target-input'],
+        inputIds: [USER_ADJUNCT_INPUT_IDS.TargetInput],
         dynamicInputIds: ['expenses-name', 'expenses-amount'],
         rangeSelector: '#goal-period',
         customSelect: undefined,
@@ -43,46 +63,8 @@ export const userInputProps = {
     }
 };
 
-export const month = {
-    1: 'January',
-    2: 'February',
-    3: 'March',
-    4: 'April',
-    5: 'May',
-    6: 'June',
-    7: 'July',
-    8: 'August',
-    9: 'September',
-    10: 'October',
-    11: 'November',
-    12: 'December'
-};
-
-export const daysInMonthsLeap = {
-    1: 31,
-    2: 29,
-    3: 31,
-    4: 30,
-    5: 31,
-    6: 30,
-    7: 31,
-    8: 31,
-    9: 30,
-    10: 31,
-    11: 30,
-    12: 31
-};
-
-export const daysInMonths = {
-    ...daysInMonthsLeap,
-    2: 28
-};
-
-export const MONTHS_IN_YEAR = 12;
-export const HUNDRED_PERCENT = 100;
-
 export const SIDE_INCOME_NUMBER_OF_INPUTS = 1;
 export const NUMBER_OF_INPUTS = {
     SIDE_INCOME: 1,
     NUMBER_OF_INPUTS: 2
-}
+};
