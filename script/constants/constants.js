@@ -1,88 +1,38 @@
-export const validationProps = {
-    form: '.dashboard__form',
-    input: '.input__input',
-    submit: '.control__button[type=submit]'
-};
-
-export const incomeProps = {
-    form: '.dashboard__form',
-    wrapper: '.input__wrapper',
-    input: '.input__input',
-    error: 'span',
-    submit: '.control__button[type=submit]'
-};
-
-export const controlHandleClassNames = {
-    inactive: 'control__element_inactive',
-    hidden : 'display_none',
-}
-
-export const controlHandleAttributes = {
-    disabled: 'disabled',
-    required: 'required'
-}
-
-export const userInputProps = {
-    income: {
-        sectionSelector: '#income-data',
-        inputSelector: '.input__input',
-        inputIds: ['salary-input', 'deposit-amount', 'custom-rate', 'custom-deposit-percent'],
-        dynamicInputIds: ['income-name-input', 'income-amount-input'],
-        rangeSelector: undefined,
-        customSelect: '#deposit-bank',
-        checkBox: '#custom-checkbox__input'
+export const DASHBOARD_FORM_SELECTORS = {
+    input: {
+        element: ".input__input",
+        classNames: {
+            error: "input-error",
+            errorActive: "input-error_active"
+        }
     },
-    adjunct: {
-        sectionSelector: '#adjunct-data',
-        inputSelector: '.input__input',
-        inputIds: ['target-input'],
-        dynamicInputIds: ['expenses-name', 'expenses-amount'],
-        rangeSelector: '#goal-period',
-        customSelect: undefined,
-        checkBox: undefined
-    }
+    wrapper: ".input__wrapper",
+    error: "span",
+    form: ".dashboard__form",
+    submit: ".control__button[type=submit]"
 };
 
-export const month = {
-    1: 'January',
-    2: 'February',
-    3: 'March',
-    4: 'April',
-    5: 'May',
-    6: 'June',
-    7: 'July',
-    8: 'August',
-    9: 'September',
-    10: 'October',
-    11: 'November',
-    12: 'December'
+export const USER_INCOME_INPUT_IDS = {
+    salaryInput: "salary-input",
+    depositAmount: "deposit-amount",
+    customRate: "custom-rate",
+    customDepositPercent: "custom-deposit-percent",
+    incomeNameInput: "income-name",
+    incomeAmountInput: "income-amount"
 };
 
-export const daysInMonthsLeap = {
-    1: 31,
-    2: 29,
-    3: 31,
-    4: 30,
-    5: 31,
-    6: 30,
-    7: 31,
-    8: 31,
-    9: 30,
-    10: 31,
-    11: 30,
-    12: 31
+export const USER_ADJUNCT_INPUT_IDS = {
+    targetInput: "target-input",
+    expensesName: "expenses-name",
+    expensesAmount: "expenses-amount"
 };
 
-export const daysInMonths = {
-    ...daysInMonthsLeap,
-    2: 28
+export const DEPOSIT_RATES = {
+    other: "other"
 };
 
-export const MONTHS_IN_YEAR = 12;
-export const HUNDRED_PERCENT = 100;
-
-export const SIDE_INCOME_NUMBER_OF_INPUTS = 1;
-export const NUMBER_OF_INPUTS = {
-    SIDE_INCOME: 1,
-    NUMBER_OF_INPUTS: 2
-}
+export const ELEMENT_CLASSES = {
+    inactive: "control__element_inactive",
+    hidden: "display_none",
+    validityActive: "control__element_validity_active"
+};

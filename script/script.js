@@ -1,91 +1,97 @@
-'use strict';
+"use strict";
 
-import { handleTitleContent } from './handleContent/handleTitleContent.js';
-import { handleBudgetDayLabelContent } from './handleContent/handleBudgetDayLabelContent.js';
-import { appendInput } from './handleInput/handleInput.js';
-import { enableValidation } from './validation/enableValidation.js';
-import { validationProps, userInputProps, NUMBER_OF_INPUTS } from './constants/constants.js';
-import { setIncomeProps } from './handleInput/setInputProps.js';
-import {
-    showTermDepositInput,
-    setTermDepositInputRequired,
-    handleAdditionalSelect,
-    hideTermDepositInput,
-    removeRequiredAttributes,
-    removeTermDepositInputRequired
-} from './handleCheckbox/handleCheckbox.js';
+import { TitleContentManager } from "./services/managers/TitleContentManager.js";
+import { SummaryCalculatorHelper } from "./services/utils/SummaryCalculatorHelper.js";
+import { InputManager } from "./services/managers/InputManager.js";
+import { FormValidator } from "./services/validators/FormValidator.js";
+import { TermDepositManager } from "./services/managers/TermDepositManager.js";
 
-const dashboardTitle = document.querySelector('.dashboard__title');
+const dashboardTitle = document.querySelector(".dashboard__title");
 
-const addSideIncomeButton = document.querySelectorAll('.header__button')[0];
-const sideIncomeTemplate = document.querySelector('#side-income').content;
-const sideIncomeContainer = addSideIncomeButton.closest('.input-list');
+const addSideIncomeButton = document.querySelectorAll(".header__button")[0];
+const sideIncomeTemplate = document.querySelector("#side-income").content;
+const sideIncomeContainer = addSideIncomeButton.closest(".input-list");
 
-const addMandatoryExpensesButton = document.querySelectorAll('.header__button')[1];
-const mandatoryExpensesTemplate = document.querySelector('#mandatory-expenses').content;
-const mandatoryExpensesContainer = addMandatoryExpensesButton.closest('.input-list');
+const addMandatoryExpensesButton = document.querySelectorAll(".header__button")[1];
+const mandatoryExpensesTemplate = document.querySelector("#mandatory-expenses").content;
+const mandatoryExpensesContainer = addMandatoryExpensesButton.closest(".input-list");
 
-const termDepositCheckBox = document.querySelector('#custom-checkbox__input');
-const depositBankSelect = document.querySelector('#deposit-bank');
+const termDepositCheckBox = document.querySelector("#custom-checkbox__input");
+const depositBankSelect = document.querySelector("#deposit-bank");
 
-const goalAchievementPeriodInput = document.querySelector('#goal-period');
-const goalAchievementPeriodTitle = document.querySelector('.custom-range__title');
+const goalAchievementPeriodInput = document.querySelector("#goal-period");
+const goalAchievementPeriodTitle = document.querySelector(".custom-range__title");
 
-const budgetDayResultLabel = document.querySelector('[for="budget_day-result"]');
+const budgetDayResultLabel = document.querySelector("[for=\"budget_day-result\"]");
 
-const sideIncomeProps = setIncomeProps({
+TitleContentManager.updateContent(dashboardTitle);
+
+const termDepositManager = new TermDepositManager();
+
+const sideIncomeInputManager = new InputManager({
     template: sideIncomeTemplate,
     container: sideIncomeContainer,
     button: addSideIncomeButton
 });
 
-const mandatoryExpensesProps = setIncomeProps({
+const mandatoryExpensesInputManager = new InputManager({
     template: mandatoryExpensesTemplate,
     container: mandatoryExpensesContainer,
     button: addMandatoryExpensesButton
 });
 
-handleTitleContent(dashboardTitle);
+const appendInputs = (inputCount, callbackFn) => {
+    Array(inputCount)
+        .fill()
+        .forEach(() => callbackFn());
+};
 
-for (let input = 0; input < NUMBER_OF_INPUTS.SIDE_INCOME; input++) {
-    appendInput(sideIncomeProps);
-}
+const NUMBER_OF_INPUTS = {
+    sideIncome: 1,
+    mandatoryExpenses: 2
+};
 
-for (let input = 0; input < NUMBER_OF_INPUTS.NUMBER_OF_INPUTS; input++) {
-    appendInput(mandatoryExpensesProps);
-}
+appendInputs(NUMBER_OF_INPUTS.sideIncome, () => sideIncomeInputManager.append());
+appendInputs(NUMBER_OF_INPUTS.mandatoryExpenses, () => mandatoryExpensesInputManager.append());
 
-termDepositCheckBox.setAttribute('checked', true);
-showTermDepositInput();
+termDepositCheckBox.setAttribute("checked", true);
+termDepositManager.showTermDepositInput();
 
-enableValidation(validationProps, userInputProps);
+const formValidator = new FormValidator();
+formValidator.enableValidation();
 
-addSideIncomeButton.addEventListener('click', () => {
-    appendInput(sideIncomeProps, true);
+addSideIncomeButton.addEventListener("click", () => {
+    sideIncomeInputManager.append();
+    formValidator.updateInputList();
+    formValidator.updateEventListeners();
 });
 
-addMandatoryExpensesButton.addEventListener('click', () => {
-    appendInput(mandatoryExpensesProps, true);
+addMandatoryExpensesButton.addEventListener("click", () => {
+    mandatoryExpensesInputManager.append();
+    formValidator.updateInputList();
+    formValidator.updateEventListeners();
 });
 
-termDepositCheckBox.addEventListener('change', () => {
+termDepositCheckBox.addEventListener("change", () => {
     if (termDepositCheckBox.checked) {
-        showTermDepositInput();
-        setTermDepositInputRequired();
-        handleAdditionalSelect();
+        termDepositManager.showTermDepositInput();
+        termDepositManager.setTermDepositInputRequired();
+        termDepositManager.handleAdditionalSelect();
+        formValidator.updateInputList();
     } else {
-        hideTermDepositInput();
-        removeTermDepositInputRequired();
-        removeRequiredAttributes();
+        termDepositManager.hideTermDepositInput();
+        termDepositManager.removeTermDepositInputRequired();
+        termDepositManager.removeRequiredAttributes();
+        formValidator.updateInputList();
     }
 });
 
-depositBankSelect.addEventListener('change', () => {
-    handleAdditionalSelect();
+depositBankSelect.addEventListener("change", () => {
+    termDepositManager.handleAdditionalSelect();
 });
 
-goalAchievementPeriodInput.addEventListener('input', () => {
+goalAchievementPeriodInput.addEventListener("input", () => {
     goalAchievementPeriodTitle.textContent = goalAchievementPeriodInput.value;
 });
 
-handleBudgetDayLabelContent(budgetDayResultLabel);
+SummaryCalculatorHelper.appendMonthToLabel(budgetDayResultLabel);

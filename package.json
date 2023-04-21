@@ -4,9 +4,12 @@
   "description": "## Link",
   "main": "script.js",
   "scripts": {
-    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\"",
+    "start": "browser-sync start --server --no-ui --files --watch \"js/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx stylelint \"**/*.css\" --fix "
+    "lint": "npx stylelint \"**/*.css\" --ignore-path .stylelintignore",
+    "lint:fix": "npx stylelint \"**/*.css\" --ignore-path .stylelintignore --fix",
+    "lint:js": "eslint --ext \".js\" --ignore-path .gitignore ./script --max-warnings=0",
+    "lint:js:fix": "eslint --ext \".js\" --ignore-path .gitignore ./script --max-warnings=0 --fix"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,8 @@
     "postcss-discard-duplicates": "^5.1.0"
   },
   "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-plugin-import": "^2.27.5",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
     "stylelint": "^14.9.1",
